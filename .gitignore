@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.DS_Store
+data/cache/*
+!data/cache/.gitkeep
+data/salaries/*
+!data/salaries/.gitkeep
+data/projections/*
+!data/projections/.gitkeep
+data/results/*
+!data/results/.gitkeep
+aadfs.db
+.env

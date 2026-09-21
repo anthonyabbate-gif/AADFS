@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AADFS — FanDuel NFL cash lineups</title>
+<link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="mark">AADFS</span>
+    <span class="tag">FanDuel NFL · cash games</span>
+  </div>
+  <div id="slate-chip" class="chip muted">No slate loaded</div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="setup">1 · Load slate</button>
+  <button class="tab" data-tab="build">2 · Build lineups</button>
+  <button class="tab" data-tab="players">3 · Player pool</button>
+  <button class="tab" data-tab="results">4 · Track results</button>
+</nav>
+
+<!-- ───────────────────────── Setup ───────────────────────── -->
+<section class="panel active" id="tab-setup">
+  <div class="card">
+    <h2>Load the week's slate</h2>
+    <p class="hint">
+      On FanDuel, open the contest you want to enter and click
+      <strong>Download Players List</strong>. That CSV is the slate. Add any projection
+      CSVs you subscribe to and they'll be blended in alongside the free sources.
+    </p>
+    <form id="slate-form">
+      <div class="field">
+        <label for="salary_file">FanDuel players list (CSV) <span class="req">required</span></label>
+        <input type="file" id="salary_file" name="salary_file" accept=".csv" required>
+      </div>
+      <div class="field">
+        <label for="projection_files">Your projection CSVs (optional, multiple)</label>
+        <input type="file" id="projection_files" name="projection_files" accept=".csv" multiple>
+        <span class="sub">Any CSV with a player-name column and a projection column.</span>
+      </div>
+      <div class="row">
+        <div class="field small">
+          <label for="season">Season</label>
+          <input type="number" id="season" name="season" value="{{ season }}">
+        </div>
+        <div class="field small">
+          <label for="week">Week</label>
+          <input type="number" id="week" name="week" value="{{ week }}" min="1" max="18">
+        </div>
+        <div class="field small">
+          <label for="history_seasons">History for variance</label>
+          <input type="text" id="history_seasons" name="history_seasons"
+                 value="{{ season - 1 }}" placeholder="2024 2023">
+          <span class="sub">Seasons of real results used to size each player's floor.</span>
+        </div>
+      </div>
+      <button type="submit" class="primary">Load slate</button>
+      <button type="button" id="fetch-sources" class="secondary" disabled>
+        Fetch free projection sources
+      </button>
+    </form>
+    <div id="setup-out"></div>
+  </div>
+</section>
+
+<!-- ───────────────────────── Build ───────────────────────── -->
+<section class="panel" id="tab-build">
+  <div class="split">
+    <aside class="card settings">
+      <h2>Settings</h2>
+
+      <h3>Contest</h3>
+      <div class="field">
+        <label for="preset">Preset</label>
+        <select id="preset">
+          <option value="cash" selected>Cash — 50/50 &amp; double-ups</option>
+          <option value="safe">Cash — maximum floor</option>
+          <option value="smallgpp">Small-field GPP</option>
+          <option value="proj">Pure projection</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="field small">
+          <label for="payout_multiple">Payout multiple</label>
+          <input type="number" id="payout_multiple" value="1.8" step="0.05" min="1.01">
+          <span class="sub">What a win returns per $1 entered.</span>
+        </div>
+        <div class="field small">
+          <label for="cash_fraction">Field paid</label>
+          <input type="number" id="cash_fraction" value="0.5" step="0.05" min="0.05" max="0.95">
+        </div>
+      </div>
+
+      <h3>Objective</h3>
+      <div class="slider">
+        <label>Projection weight <output id="wp-out">0.55</output></label>
+        <input type="range" id="weight_projection" min="0" max="1" step="0.05" value="0.55">
+      </div>
+      <div class="slider">
+        <label>Floor weight <output id="wf-out">0.45</output></label>
+        <input type="range" id="weight_floor" min="0" max="1" step="0.05" value="0.45">
+      </div>
+      <div class="slider">
+        <label>Ceiling weight <output id="wc-out">0.00</output></label>
+        <input type="range" id="weight_ceiling" min="0" max="1" step="0.05" value="0">
+      </div>
+      <div class="slider">
+        <label>Risk penalty <output id="rp-out">0.00</output></label>
+        <input type="range" id="risk_penalty" min="0" max="1" step="0.05" value="0">
+        <span class="sub">Points docked per point of a player's volatility.</span>
+      </div>
+
+      <h3>Constraints</h3>
+      <div class="row">
+        <div class="field small">
+          <label for="n_lineups">Lineups</label>
+          <input type="number" id="n_lineups" value="1" min="1" max="20">
+        </div>
+        <div class="field small">
+          <label for="max_overlap">Max overlap</label>
+          <input type="number" id="max_overlap" value="7" min="1" max="8">
+        </div>
+      </div>
+      <div class="field">
+        <label for="min_salary">Minimum salary used</label>
+        <input type="number" id="min_salary" value="58200" step="100" min="0" max="60000">
+      </div>
+      <div class="row">
+        <div class="field small">
+          <label for="min_sources">Min sources / player</label>
+          <input type="number" id="min_sources" value="0" min="0" max="5">
+        </div>
+        <div class="field small">
+          <label for="max_per_game">Max per game</label>
+          <input type="number" id="max_per_game" value="" min="1" max="9" placeholder="none">
+        </div>
+      </div>
+      <label class="check">
+        <input type="checkbox" id="avoid_dst_vs_own_offense" checked>
+        Never play a D/ST against my own players
+      </label>
+      <label class="check">
+        <input type="checkbox" id="exclude_out" checked>
+        Exclude players flagged out
+      </label>
+      <label class="check">
+        <input type="checkbox" id="exclude_questionable">
+        Exclude questionable / doubtful
+      </label>
+      <label class="check">
+        <input type="checkbox" id="simulate" checked>
+        Simulate contest outcome
+      </label>
+
+      <div class="actions">
+        <button id="build-btn" class="primary" disabled>Build lineups</button>
+        <button id="save-btn" class="secondary" disabled>Save</button>
+      </div>
+      <div class="exports">
+        <a id="export-entries" class="linkbtn disabled" href="/api/export/entries.csv">
+          FanDuel upload CSV
+        </a>
+        <a id="export-readable" class="linkbtn disabled" href="/api/export/lineups.csv">
+          Readable CSV
+        </a>
+      </div>
+      <div id="locks-summary" class="locks"></div>
+    </aside>
+
+    <div class="results-area">
+      <div id="build-out"></div>
+      <div id="lineups"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── Players ───────────────────────── -->
+<section class="panel" id="tab-players">
+  <div class="card">
+    <div class="toolbar">
+      <input type="search" id="player-search" placeholder="Search player or team…">
+      <select id="pos-filter">
+        <option value="">All positions</option>
+        <option>QB</option><option>RB</option><option>WR</option>
+        <option>TE</option><option>DST</option>
+      </select>
+      <label class="check inline">
+        <input type="checkbox" id="hide-unprojected" checked> Hide unprojected
+      </label>
+      <span class="spacer"></span>
+      <button id="clear-marks" class="secondary small">Clear locks &amp; excludes</button>
+    </div>
+    <div class="tablewrap">
+      <table id="player-table">
+        <thead>
+          <tr>
+            <th data-sort="name">Player</th>
+            <th data-sort="position">Pos</th>
+            <th data-sort="team">Team</th>
+            <th data-sort="salary" class="num">Salary</th>
+            <th data-sort="projection" class="num">Proj</th>
+            <th data-sort="floor" class="num">Floor</th>
+            <th data-sort="ceiling" class="num">Ceil</th>
+            <th data-sort="stdev" class="num">Vol</th>
+            <th data-sort="value" class="num">Value</th>
+            <th data-sort="sources" class="num">Src</th>
+            <th>Status</th>
+            <th>Lock</th>
+            <th>Out</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── Results ───────────────────────── -->
+<section class="panel" id="tab-results">
+  <div class="card">
+    <h2>Track what actually happened</h2>
+    <p class="hint">
+      FanDuel has no public API, so results come from the entry-history CSV you export
+      from your account (History → Export). Import it here to track your real cash rate
+      against the rate you need to beat the rake.
+    </p>
+    <form id="results-form">
+      <div class="row">
+        <div class="field">
+          <label for="results_file">FanDuel entry history (CSV)</label>
+          <input type="file" id="results_file" name="file" accept=".csv" required>
+        </div>
+        <div class="field small">
+          <label for="r_season">Season</label>
+          <input type="number" id="r_season" name="season" value="{{ season }}">
+        </div>
+        <div class="field small">
+          <label for="r_week">Week</label>
+          <input type="number" id="r_week" name="week" value="{{ week }}">
+        </div>
+      </div>
+      <button type="submit" class="primary">Import results</button>
+    </form>
+    <div id="results-out"></div>
+  </div>
+</section>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

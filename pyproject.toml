@@ -1,0 +1,38 @@
+[project]
+name = "aadfs"
+version = "0.1.0"
+description = "Weekly NFL DFS lineup builder for FanDuel cash games"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "jinja2>=3.1",
+    "python-multipart>=0.0.9",
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "pulp>=2.7,<4",  # PuLP 4.0 changes the LpVariable and solver APIs
+    "httpx>=0.27",
+    "rapidfuzz>=3.6",
+    "pydantic>=2.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+aadfs = "aadfs.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["aadfs*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+    # PuLP 3.x warns about APIs that change in 4.0; we pin below 4.0 for now.
+    "ignore:Constructing LpVariable:DeprecationWarning",
+    "ignore:PULP_CBC_CMD is deprecated:DeprecationWarning",
+]
