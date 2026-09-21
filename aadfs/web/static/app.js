@@ -284,6 +284,11 @@ $('#build-btn').addEventListener('click', async () => {
       body: JSON.stringify(payload),
     });
     renderLineups(data);
+    // Stacked on a tablet, the lineups land far below the settings panel;
+    // bring them into view rather than making you scroll to find them.
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      $('#build-out').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     $('#save-btn').disabled = false;
     $('#export-entries').classList.remove('disabled');
     $('#export-readable').classList.remove('disabled');

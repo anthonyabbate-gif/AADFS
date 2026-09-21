@@ -30,6 +30,7 @@ from aadfs.pipeline import (
     build_lineups, default_sources, guess_season_and_week, load_variance,
 )
 from aadfs.simulate import ContestSettings
+from aadfs.web import auth
 from aadfs.sources.base import HttpCache, SourceResult
 from aadfs.sources.csv_source import parse_projection_csv
 from aadfs.store import Store
@@ -66,6 +67,10 @@ state = AppState()
 store = Store()
 app = FastAPI(title="AADFS — FanDuel NFL cash lineup builder")
 app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
+
+#: Password protection is applied only when AADFS_PASSWORD is set; on localhost
+#: it is unnecessary, and `aadfs serve` refuses any other bind without it.
+auth_enabled = auth.install(app)
 
 
 def _player_payload(player) -> dict:

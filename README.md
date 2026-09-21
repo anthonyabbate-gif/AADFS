@@ -91,6 +91,53 @@ in the report, and the blend proceeds on whatever arrived.
 
 ---
 
+## Running it from an iPad
+
+An iPad cannot run the app itself — the solver is a compiled binary and the data
+stack has no iOS builds. What it can do is *use* the app, since the interface is
+already a web page. So: run it on a machine that stays on, and open it in Safari.
+
+The layout adapts to both orientations, touch targets are sized for fingers, and
+inputs are set at 16px so Safari does not zoom the page every time you tap one.
+Uploading the FanDuel CSV works through the Files app.
+
+### The private way (recommended)
+
+Run it on your desktop or a Raspberry Pi, and join both devices to a
+[Tailscale](https://tailscale.com) network. Tailscale is free for personal use
+and gives your machine a stable private address that only your own devices can
+reach, encrypted end to end. Nothing is exposed to the internet.
+
+```bash
+export AADFS_PASSWORD='something-long-and-random'
+aadfs serve --host 0.0.0.0
+```
+
+Then on the iPad, open `http://<your-tailscale-name>:8000` and enter the
+password once. Safari remembers it.
+
+### On a small cloud host
+
+Any $5/month VPS works. Put it behind a reverse proxy with HTTPS (Caddy does
+this in about three lines), set `AADFS_PASSWORD`, and run the same command. If
+the host has ephemeral storage, mount a volume for `aadfs.db` and `data/` or you
+will lose your history on every redeploy.
+
+### About the password
+
+The app is unprotected on localhost, because only you can reach it there. The
+moment you bind to any other address, **`aadfs serve` refuses to start until
+`AADFS_PASSWORD` is set** — it holds your lineups and contest history, and an
+open port on a coffee-shop network is an open door. Set `AADFS_USERNAME` too if
+you want something other than `aadfs`.
+
+Basic auth encodes the password reversibly rather than encrypting it, so it is
+only private over a connection that is itself encrypted. Tailscale and HTTPS
+both qualify; plain HTTP over the open internet does not. Do not port-forward
+this to the world.
+
+---
+
 ## How the model works
 
 ### 1. Blending

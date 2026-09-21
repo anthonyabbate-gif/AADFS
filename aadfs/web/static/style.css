@@ -82,6 +82,20 @@ button.secondary { background: var(--surface-2); color: var(--text); }
 button.secondary:disabled { opacity: .45; cursor: not-allowed; }
 button.small { padding: 5px 10px; font-size: 12px; }
 .actions { display: flex; gap: 8px; margin-top: 18px; }
+/* The settings list is taller than the space it gets, in both layouts: when
+   stacked it runs past the bottom of the screen, and in two columns it scrolls
+   inside its own panel. Either way the Build button ends up out of reach, so
+   pin the actions to the bottom of whichever box is doing the scrolling. */
+.settings .actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  margin: 18px -18px 0;
+  padding: 12px 18px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.settings .actions button { flex: 1; }
 .exports { display: flex; gap: 8px; margin-top: 10px; }
 .linkbtn {
   flex: 1; text-align: center; font-size: 12px; padding: 7px; border-radius: 6px;
@@ -93,7 +107,15 @@ button.small { padding: 5px 10px; font-size: 12px; }
 /* build layout */
 .split { display: grid; grid-template-columns: 300px 1fr; gap: 16px; align-items: start; }
 @media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
-.settings { position: sticky; top: 16px; max-height: calc(100vh - 40px); overflow-y: auto; }
+/* The header and tabs sit above this panel before the page is scrolled, so a
+   cap of 100vh would run its bottom edge -- and the Build button pinned to it
+   -- off the screen on first load. Leave room for them. */
+.settings {
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+}
 .locks { margin-top: 14px; font-size: 12px; color: var(--muted); }
 .locks span { display: inline-block; margin: 2px 4px 2px 0; padding: 2px 7px;
               border-radius: 4px; background: var(--surface-2); border: 1px solid var(--border); }
@@ -156,3 +178,47 @@ tr.excluded { opacity: .4; }
            border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite;
            vertical-align: -2px; margin-right: 7px; }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── stacked layout ────────────────────────────────────────────────────────
+   Below the two-column breakpoint the settings panel stacks above the
+   lineups, where pinning it and capping its height only gets in the way. */
+@media (max-width: 900px) {
+  .settings {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+  }
+  .panel { padding: 16px; }
+  .field.small { max-width: none; flex: 1 1 140px; }
+  .tablewrap { max-height: none; }
+  .verdict { margin-left: 0; width: 100%; text-align: center; }
+}
+
+/* ── touch devices ─────────────────────────────────────────────────────────
+   Keyed to the pointer rather than the viewport width, because an iPad in
+   landscape is wider than plenty of laptops but is still driven by a finger.
+   The font-size floor is the important one: iOS Safari zooms the whole page
+   when a focused input is under 16px, leaving the layout shifted after every
+   tap. */
+@media (pointer: coarse) {
+  input[type=text], input[type=number], input[type=search], select,
+  input[type=file] {
+    font-size: 16px;
+    padding: 10px;
+  }
+  button { padding: 11px 16px; min-height: 44px; }
+  .tab { padding: 11px 14px; min-height: 44px; }
+  .check { min-height: 40px; }
+  .check input[type=checkbox] { width: 20px; height: 20px; }
+  .linkbtn { padding: 13px; }
+  input[type=range] { height: 32px; }
+  th, td { padding: 10px 8px; }
+}
+
+@media (max-width: 560px) {
+  .topbar { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tab { white-space: nowrap; }
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .lineup-head { gap: 12px; padding: 12px; }
+}

@@ -214,7 +214,22 @@ def cmd_import_results(args) -> int:
 def cmd_serve(args) -> int:
     import uvicorn
 
-    print(f"AADFS running at http://{args.host}:{args.port}")
+    from aadfs.web import auth
+
+    problem = auth.guard_public_bind(args.host)
+    if problem:
+        print(problem, file=sys.stderr)
+        return 1
+
+    if auth.is_local_host(args.host):
+        print(f"AADFS running at http://{args.host}:{args.port}")
+        print("Reachable from this machine only. To use it from a tablet or "
+              "phone, see 'Running it from an iPad' in the README.")
+    else:
+        print(f"AADFS running at http://{args.host}:{args.port} (password protected)")
+        print("Basic auth is only private over an encrypted connection — keep "
+              "this behind Tailscale or an HTTPS reverse proxy.")
+
     uvicorn.run("aadfs.web.app:app", host=args.host, port=args.port, reload=args.reload)
     return 0
 
@@ -273,7 +288,9 @@ def build_parser() -> argparse.ArgumentParser:
     results.set_defaults(func=cmd_import_results)
 
     serve = subparsers.add_parser("serve", help="Start the web app")
-    serve.add_argument("--host", default="127.0.0.1")
+    serve.add_argument("--host", default="127.0.0.1",
+                       help="Bind address. Anything other than localhost "
+                            "requires AADFS_PASSWORD to be set.")
     serve.add_argument("--port", type=int, default=8000)
     serve.add_argument("--reload", action="store_true")
     serve.set_defaults(func=cmd_serve)
