@@ -1,0 +1,10 @@
+# Replace with your domain. Caddy obtains and renews the certificate itself.
+#
+# HTTPS is not decoration here: the app authenticates with HTTP Basic, which
+# encodes the password reversibly. Over plain HTTP that password is readable in
+# transit. Either terminate TLS here or keep the whole thing on Tailscale.
+
+rankings.example.com {
+    encode zstd gzip
+    reverse_proxy app:8000
+}

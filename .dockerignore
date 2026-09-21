@@ -1,0 +1,11 @@
+.venv/
+.git/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/
+aadfs.db
+tests/
+deploy/
+*.md
+!README.md

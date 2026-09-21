@@ -19,7 +19,14 @@ import httpx
 
 from aadfs.scoring import StatLine, score_statline
 
-DEFAULT_CACHE_DIR = Path("data/cache")
+def _default_cache_dir() -> Path:
+    from aadfs.config import cache_dir
+
+    return cache_dir()
+
+
+#: Resolved at import for callers that want a plain path; honours AADFS_DATA.
+DEFAULT_CACHE_DIR = _default_cache_dir()
 DEFAULT_TIMEOUT = 25.0
 USER_AGENT = "aadfs/0.1 (personal DFS research tool)"
 

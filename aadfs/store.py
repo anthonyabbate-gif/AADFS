@@ -13,7 +13,13 @@ from contextlib import contextmanager
 from dataclasses import dataclass
 from pathlib import Path
 
-DEFAULT_DB = Path("aadfs.db")
+def _default_db() -> Path:
+    from aadfs.config import database_path
+
+    return database_path()
+
+
+DEFAULT_DB = _default_db()
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS slates (

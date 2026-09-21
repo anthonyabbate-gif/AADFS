@@ -1,7 +1,14 @@
-# AADFS — FanDuel NFL cash-game lineup builder
+# AADFS — weekly NFL consensus rankings (and a FanDuel cash lineup builder)
 
-A local web app for building weekly NFL DFS lineups on FanDuel, tuned for
-**cash games** (50/50s and double-ups) rather than tournaments.
+Two things live here. The main one is a **weekly consensus ranking board**: it
+pulls as many independent inputs as it can reach, blends them into one ranking
+per position, and shows you where they agree and where they split. The second is
+a FanDuel **cash-game lineup builder** that the rankings feed into.
+
+Rankings came second but matter more. They need no salary file, no FanDuel
+account and no subscription to be useful, and the thing they tell you — *which
+players are genuinely separated, and which are a coin-flip the sources cannot
+agree on* — is the part that survives contact with a real Sunday.
 
 Cash games are a different problem from GPPs. You are not trying to win; you are
 trying to finish in the top half more than ~55.6% of the time, because a 1.8x
@@ -17,10 +24,89 @@ and does it clear break-even?*
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -e .
-.venv/bin/aadfs serve          # then open http://127.0.0.1:8000
+.venv/bin/aadfs sources doctor   # which inputs can this machine reach?
+.venv/bin/aadfs rankings         # build this week's consensus board
+.venv/bin/aadfs serve            # or use the browser: http://127.0.0.1:8000
 ```
 
-Then, each week:
+**Run `sources doctor` first.** It tries every input and tells you which
+returned data, which need an API key, and which your network cannot reach. It is
+the fastest way to find out what you are actually working with.
+
+---
+
+## Consensus rankings
+
+### The inputs
+
+| Source | Kind | Needs | Notes |
+|---|---|---|---|
+| Sleeper | projection | nothing | Weekly projections, re-scored under FanDuel rules. |
+| ESPN | projection | nothing | Weekly projected stat lines. |
+| NFL.com | projection | nothing | Their own fantasy projections. |
+| Fantasy Nerds | ranking | API key | `TEST` works as a key while you evaluate it. |
+| Vegas totals | market | free API key | Implied team totals from sportsbook lines. |
+| Recent form | model | nothing | Computed here from nflverse results. Works offline. |
+| Your CSVs | ranking | a file | Any export with a player column and a rank or projection. |
+
+The mix is deliberate. Ten feeds reselling one model are worth less than three
+that disagree for real reasons, so the roster spans fantasy projections, expert
+orderings, betting markets and a model computed locally. The local model earns
+its place by never failing: it needs no key, no subscription and nobody else's
+server to be up on a Saturday.
+
+Add your own with `--csv`, and they are weighted above the free feeds by default
+— a source you chose to pay for should generally outrank one that costs nothing,
+at least until the scoring below says otherwise.
+
+### How the blend works
+
+**Sources are combined on rank, not points.** One source's 14.2 and another's
+11.8 may say exactly the same thing about a player if their scales differ; their
+*orders* do not suffer that problem. It also lets a feed that only publishes an
+order sit alongside one that publishes projections, which is the entire point of
+casting a wide net.
+
+**Thin coverage is penalised, not ignored.** A player rated by one source and
+missed by six has not been "ranked 3rd" in any meaningful sense. Unrated players
+are parked past the end of that source's list, so nobody floats to the top on a
+single enthusiastic opinion.
+
+**Disagreement is reported, not averaged away.** Eight sources putting a player
+between 4th and 6th is a different claim from a player averaging 5th because
+half say 1st and half say 9th. The board shows the spread, labels the agreement,
+and flags the individual sources that are a long way from the rest.
+
+**Tiers come from that disagreement.** A tier runs until a player is far enough
+clear of the one who started it that their uncertainty bands stop overlapping,
+so tiers are tight where sources agree and wide where they genuinely do not.
+That is more useful than fixed groups of five.
+
+### Working out which sources to trust
+
+Adding a bad source to a consensus does not average out — it drags. So sources
+can be graded against what actually happened:
+
+```bash
+aadfs rankings            # Saturday: capture what every source claims
+aadfs sources score --save  # Tuesday: grade it, update the blend weights
+```
+
+Scoring reports Spearman correlation (did it get the order right?), mean
+absolute rank error (how far off per player?) and top-12 hit rate (of the
+players it called startable, how many were?). The last one matters most, because
+the top of the board is where decisions get made.
+
+Weights are centred on 1.0 and clamped between 0.3 and 2.0 on purpose. A source
+that looked bad for three weeks might simply have had three bad weeks, and a
+blend that swings hard on a small sample is worse than one that does not move.
+
+**This only works going forward.** Live feeds publish the current week, so a
+source cannot be graded on a past week after the fact — it has to be graded on
+what it said at the time. That is why every board is written to disk when it is
+built. A week you do not capture is accuracy data you cannot get back.
+
+---
 
 1. On FanDuel, open the contest and click **Download Players List**. That CSV is
    the slate.
@@ -118,10 +204,7 @@ password once. Safari remembers it.
 
 ### On a small cloud host
 
-Any $5/month VPS works. Put it behind a reverse proxy with HTTPS (Caddy does
-this in about three lines), set `AADFS_PASSWORD`, and run the same command. If
-the host has ephemeral storage, mount a volume for `aadfs.db` and `data/` or you
-will lose your history on every redeploy.
+See **Hosting** below — there is a ready-made Docker setup in `deploy/`.
 
 ### About the password
 
@@ -203,6 +286,52 @@ up** rather than returning nothing.
 
 ---
 
+## Hosting
+
+**Recommendation: a $5/month VPS, with the Docker setup in `deploy/`.**
+
+The job is small — fetch a handful of APIs once a week, aggregate, store a few
+hundred KB, serve a page — so the hardware barely matters. What matters is that
+it is *running on Saturday*. The accuracy scoring depends on having captured
+each week's board before the games, and a week missed is a week that cannot be
+reconstructed afterwards. That single fact decides the hosting question:
+
+- **A $5 VPS** (Hetzner, DigitalOcean, Vultr) stays up through your power cuts
+  and ISP outages. This is what I would run.
+- **A Raspberry Pi at home** costs nothing monthly and keeps your data in your
+  house, which is a real advantage — but a blackout on a Saturday morning
+  silently costs you a week of data collection.
+- **Fly.io / Railway / Render** deploy easily, but their disks are ephemeral.
+  You must attach a volume for `/data`, and an always-on instance costs about
+  the same as a VPS anyway.
+
+```bash
+git clone <your fork> /srv/aadfs && cd /srv/aadfs/deploy
+cp .env.example .env          # set AADFS_PASSWORD and any API keys
+$EDITOR Caddyfile             # put your domain in
+docker compose up -d
+crontab -e                    # add the two lines from crontab.example
+```
+
+`crontab.example` captures the board on Saturday morning and grades it the
+following Tuesday, once results are published.
+
+If you would rather not expose anything publicly, drop the `caddy` service and
+put the host on [Tailscale](https://tailscale.com) instead. Either way the app
+refuses to bind to a non-local address until `AADFS_PASSWORD` is set.
+
+**`AADFS_DATA` decides where everything is written** (boards, the cached
+nflverse downloads, the results database). The compose file points it at the
+mounted volume. Getting this wrong means writing inside the container, and
+losing every saved board on the next redeploy.
+
+I was not able to build the image here — this environment has the Docker client
+but no daemon — so treat the first `docker compose build` as the real test. The
+package itself installs cleanly from a fresh clone, which is most of what the
+Dockerfile does.
+
+---
+
 ## Limitations — read these
 
 - **Projection quality dominates everything else.** The optimiser and simulator
@@ -226,6 +355,15 @@ up** rather than returning nothing.
   field goals and extra points; that reconstruction reproduces real final scores
   exactly on every game checked.
 - **This does not place bets.** It builds a CSV you upload yourself.
+- **Consensus is not accuracy.** Sources agreeing means they agree, not that
+  they are right — they often read each other. Agreement narrows a tier; it does
+  not guarantee the tier is in the right place.
+- **The network adapters are written against documented response shapes but were
+  never run against the live feeds**, because the environment they were built in
+  could not reach them. `aadfs sources doctor` exists for exactly this: it tries
+  every one and tells you which work. A feed that changes shape reports a clear
+  error rather than returning silent nonsense, but expect to need a fix the
+  first time you run it.
 
 ---
 
@@ -233,6 +371,12 @@ up** rather than returning nothing.
 
 ```
 aadfs/
+  config.py         where files are written (AADFS_DATA)
+  rankings/
+    sources.py      every input: projections, rankings, markets, local model
+    aggregate.py    rank blending, disagreement, tiers
+    evaluate.py     grading sources against real results
+    pipeline.py     building and saving the weekly board
   scoring.py        FanDuel scoring rules and roster construction
   models.py         Player, Slate, Lineup
   names.py          name/team normalisation and matching
@@ -247,6 +391,7 @@ aadfs/
   sources/          Sleeper, ESPN, nflverse, your own CSVs
   jobs/             the Saturday scan
   web/              the local app
+deploy/             Docker Compose, Caddy and cron for a small host
 ```
 
 Run the tests with `.venv/bin/python -m pytest`.

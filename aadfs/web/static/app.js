@@ -39,6 +39,7 @@ $$('.tab').forEach((tab) => tab.addEventListener('click', () => {
   $('#tab-' + tab.dataset.tab).classList.add('active');
   if (tab.dataset.tab === 'players') renderPlayers();
   if (tab.dataset.tab === 'results') loadResults();
+  if (tab.dataset.tab === 'rankings') loadRankingSources();
 }));
 
 /* ───────────────────────── slate upload ───────────────────────── */
@@ -410,3 +411,127 @@ async function loadResults() {
       <th class="num">Place</th><th class="num">Fee</th><th class="num">Won</th></tr></thead>
     <tbody>${rows}</tbody></table></div>`;
 }
+
+
+/* ───────────────────────── consensus rankings ───────────────────────── */
+let rankingSourcesLoaded = false;
+
+async function loadRankingSources() {
+  if (rankingSourcesLoaded) return;
+  try {
+    const data = await api('/api/rankings/sources');
+    const learned = data.learned_weights || {};
+    $('#rk-sources').innerHTML = data.sources.map((s) => {
+      const weight = learned[s.name];
+      return `<div class="srccard">
+        <div class="n">${escapeHtml(s.name)}
+          <span class="kindtag">${escapeHtml(s.kind)}</span>
+          ${s.available ? '' : '<span class="badge q">needs key</span>'}</div>
+        <div class="d">${escapeHtml(s.description)}</div>
+        ${weight !== undefined
+          ? `<div class="d">learned weight <strong>${weight}</strong></div>` : ''}
+      </div>`;
+    }).join('');
+    rankingSourcesLoaded = true;
+  } catch (error) {
+    $('#rk-sources').innerHTML = '';
+  }
+}
+
+$('#rk-build').addEventListener('click', async () => {
+  const button = $('#rk-build');
+  button.disabled = true;
+  notice('#rk-out', 'ok', '<span class="spinner"></span>Fetching every available source…');
+  $('#rk-board').innerHTML = '';
+  try {
+    const data = await api('/api/rankings/build', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        season: Number($('#rk_season').value) || null,
+        week: Number($('#rk_week').value) || null,
+        refresh: $('#rk_refresh').checked,
+        equal_weights: $('#rk_equal').checked,
+      }),
+    });
+    renderBoard(data);
+  } catch (error) {
+    notice('#rk-out', 'err', escapeHtml(error.message));
+  } finally {
+    button.disabled = false;
+  }
+});
+
+function renderBoard(data) {
+  const ok = data.sources.filter((s) => s.ok && s.entries > 0);
+  const bad = data.sources.filter((s) => !s.ok || s.entries === 0);
+
+  const parts = [`<div class="notice ok">
+    Built from <strong>${ok.length}</strong> source${ok.length === 1 ? '' : 's'}
+    (${ok.map((s) => `${escapeHtml(s.source)} ${s.entries}`).join(', ')}).
+    ${data.players.length} players ranked. Saved to
+    <code>${escapeHtml(data.written.csv)}</code>.
+  </div>`];
+  if (bad.length) {
+    parts.push(`<div class="notice warn"><strong>Unavailable this run:</strong>
+      <ul>${bad.map((s) =>
+        `<li>${escapeHtml(s.source)} — ${escapeHtml(s.error || 'no data')}</li>`).join('')}
+      </ul></div>`);
+  }
+  if (ok.length === 1) {
+    parts.push(`<div class="notice warn">Only one source came back, so there is no
+      consensus to speak of and the tiers are evenly sized rather than meaningful.
+      Add sources for this to be worth reading.</div>`);
+  }
+  $('#rk-out').innerHTML = parts.join('');
+
+  const worstByPos = {};
+  data.players.forEach((p) => {
+    worstByPos[p.position] = Math.max(worstByPos[p.position] || 0, p.worst || 0);
+  });
+
+  $('#rk-board').innerHTML = data.positions.map((position) => {
+    const players = data.players.filter((p) => p.position === position);
+    const scale = worstByPos[position] || 1;
+    let lastTier = null;
+    const rows = players.map((p) => {
+      const isBreak = lastTier !== null && p.tier !== lastTier;
+      lastTier = p.tier;
+      const left = ((p.best || 0) / scale) * 100;
+      const width = Math.max(((p.range || 0) / scale) * 100, 2);
+      const cls = { 'tight': 'tight', 'some spread': 'some', 'wide': 'wide',
+                    'single source': 'single' }[p.agreement] || 'single';
+      const detail = Object.entries(p.source_ranks)
+        .sort((a, b) => a[1] - b[1])
+        .map(([k, v]) => `${k}: ${v}`).join('\n');
+      return `<tr class="${isBreak ? 'tier-break' : ''}">
+        <td class="num">${p.rank}</td>
+        <td><span class="tierbadge">T${p.tier}</span></td>
+        <td>${escapeHtml(p.name)}
+          ${p.outliers.length ? `<span class="badge q" title="${escapeHtml(p.outliers.join('; '))}">split</span>` : ''}</td>
+        <td>${escapeHtml(p.team || '')}<span style="color:var(--muted)">${
+          p.opponent ? ' vs ' + escapeHtml(p.opponent) : ''}</span></td>
+        <td class="num">${p.consensus_rank}</td>
+        <td><div class="spreadbar" title="best ${p.best}, worst ${p.worst}">
+          <span style="left:${left}%;width:${width}%"></span></div></td>
+        <td><span class="agree ${cls}">${escapeHtml(p.agreement)}</span></td>
+        <td class="num" title="${escapeHtml(detail)}">${p.sources}</td>
+        <td class="num">${p.mean_points !== null ? p.mean_points : ''}</td>
+      </tr>`;
+    }).join('');
+
+    return `<div class="posblock">
+      <h3>${escapeHtml(position)}<span class="count">${players.length} players</span></h3>
+      <table>
+        <thead><tr>
+          <th class="num">#</th><th>Tier</th><th>Player</th><th>Team</th>
+          <th class="num">Consensus</th><th>Range</th><th>Agreement</th>
+          <th class="num">Src</th><th class="num">Pts</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+  }).join('');
+}
+
+loadRankingSources();

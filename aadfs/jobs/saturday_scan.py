@@ -28,7 +28,9 @@ from aadfs.pipeline import (
 )
 from aadfs.simulate import ContestSettings
 
-DEFAULT_OUTPUT_DIR = Path("data/projections")
+from aadfs.config import cache_dir as scan_cache_dir, projections_dir
+
+DEFAULT_OUTPUT_DIR = projections_dir()
 
 
 def write_consensus_csv(bundle: ProjectionBundle, path: Path) -> Path:
@@ -92,7 +94,7 @@ def run_scan(
     history_seasons: list[int] | None = None,
     build_starting_lineups: int = 3,
     fetch_remote: bool = True,
-    cache_dir: str | Path = "data/cache",
+    cache_dir: str | Path | None = None,
 ) -> dict:
     """Run the full Saturday scan and return a summary of what it produced."""
     season, week = (season, week) if season and week else guess_season_and_week()
@@ -112,7 +114,7 @@ def run_scan(
         season=season,
         week=week,
         history_seasons=history_seasons or [season - 1],
-        cache_dir=cache_dir,
+        cache_dir=cache_dir or scan_cache_dir(),
         fetch_remote=fetch_remote,
     )
 

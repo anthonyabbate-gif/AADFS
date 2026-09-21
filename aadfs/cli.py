@@ -211,6 +211,177 @@ def cmd_import_results(args) -> int:
     return 0
 
 
+
+# --- rankings ----------------------------------------------------------------
+
+def cmd_rankings(args) -> int:
+    from aadfs.pipeline import guess_season_and_week
+    from aadfs.config import rankings_dir
+    from aadfs.rankings.pipeline import build_board, load_weights, write_board
+
+    season, week = (args.season, args.week)
+    if not (season and week):
+        season, week = guess_season_and_week()
+
+    weights = {} if args.equal_weights else load_weights()
+    board = build_board(
+        season, week,
+        csv_paths=args.csv, weights=weights,
+        refresh=args.refresh, only=args.only,
+        min_sources=args.min_sources,
+    )
+
+    for source in board.failed_sources:
+        print(f"warning: source '{source.source}' unusable: {source.error}",
+              file=sys.stderr)
+    if not board.ok_sources:
+        print("No source returned usable data. Run 'aadfs sources doctor' to see why.",
+              file=sys.stderr)
+        return 1
+
+    paths = write_board(board, args.output_dir or rankings_dir())
+
+    if args.json:
+        print(json.dumps({"season": season, "week": week, **paths,
+                          "players": len(board.players),
+                          "sources": [s.source for s in board.ok_sources]}, indent=2))
+        return 0
+
+    used = ", ".join(f"{s.source}({s.count})" for s in board.ok_sources)
+    print(f"Consensus rankings — {season} week {week}")
+    print(f"  sources : {used}")
+    if weights:
+        print(f"  weights : {', '.join(f'{k}={v}' for k, v in sorted(weights.items()))}")
+    print(f"  written : {paths['csv']}")
+    print()
+
+    positions = args.positions or board.positions
+    for position in positions:
+        players = board.by_position(position)[: args.top]
+        if not players:
+            continue
+        print(f"  {position}")
+        print(f"  {'rk':>3} {'tier':>4}  {'player':<24} {'tm':<4} "
+              f"{'cons':>6} {'spread':>7}  agreement")
+        previous = None
+        for player in players:
+            if previous is not None and player.tier != previous:
+                print("  " + "-" * 62)
+            flag = "  <- sources split" if player.disagreement == "wide" else ""
+            print(f"  {player.overall_rank:>3} {player.tier:>4}  {player.name:<24} "
+                  f"{(player.team or ''):<4} {player.consensus_rank:>6} "
+                  f"{player.rank_range:>7} {player.disagreement}{flag}")
+            previous = player.tier
+        print()
+    return 0
+
+
+def cmd_sources_doctor(args) -> int:
+    """Check every source against the live feeds and report what works."""
+    from aadfs.pipeline import guess_season_and_week
+    from aadfs.rankings.registry import all_sources
+
+    season, week = (args.season, args.week)
+    if not (season and week):
+        season, week = guess_season_and_week()
+
+    print(f"Checking sources for {season} week {week}\n")
+    working = 0
+    for source in all_sources():
+        ready, why = source.available()
+        label = f"  {source.name:<16}"
+        if not ready:
+            print(f"{label} SKIP   {why}")
+            print(f"  {'':<16}        {source.description}")
+            continue
+        result = source.fetch(season, week)
+        if result.ok and result.count:
+            working += 1
+            sample = ", ".join(
+                f"{e.name}" for e in sorted(
+                    result.entries,
+                    key=lambda e: (e.rank if e.rank is not None else -(e.points or 0)),
+                )[:3]
+            )
+            cached = " (cached)" if result.from_cache else ""
+            print(f"{label} OK     {result.count} entries, kind={result.kind}{cached}")
+            print(f"  {'':<16}        top: {sample}")
+        else:
+            print(f"{label} FAIL   {result.error}")
+            print(f"  {'':<16}        {source.description}")
+    print(f"\n{working} source(s) returning data.")
+    if not working:
+        print("Nothing is reachable. Check this machine's network access first.",
+              file=sys.stderr)
+        return 1
+    return 0
+
+
+def cmd_sources_score(args) -> int:
+    """Grade saved boards against real results and update blend weights."""
+    from pathlib import Path
+
+    from aadfs.rankings.evaluate import (
+        positions_from_history, score_saved_board, weights_from_scores,
+    )
+    from aadfs.rankings.pipeline import save_weights
+    from aadfs.sources.nflverse import load_history, weekly_actuals
+
+    from aadfs.config import rankings_dir
+
+    directory = Path(args.output_dir or rankings_dir())
+    boards = sorted(directory.glob("consensus_*.json"))
+    if not boards:
+        print(f"No saved boards in {directory}. Run 'aadfs rankings' first — a source "
+              f"can only be graded on what it said at the time.", file=sys.stderr)
+        return 1
+
+    seasons = sorted({int(json.loads(b.read_text()).get("season", 0)) for b in boards})
+    seasons = [s for s in seasons if s]
+    try:
+        history = load_history(seasons)
+    except Exception as exc:
+        print(f"Could not load results: {exc}", file=sys.stderr)
+        return 1
+    if "season_type" in history.columns:
+        history = history[history["season_type"] == "REG"]
+    positions = positions_from_history(history)
+
+    all_scores = []
+    for path in boards:
+        board = json.loads(path.read_text())
+        season, week = int(board.get("season", 0)), int(board.get("week", 0))
+        actuals = weekly_actuals(history, season, week)
+        if not actuals:
+            print(f"  {season} wk{week}: no results yet, skipping")
+            continue
+        scores = score_saved_board(board, actuals, positions)
+        all_scores.extend(scores)
+        for score in sorted(scores, key=lambda s: -(s.spearman or -1)):
+            if score.spearman is None:
+                continue
+            print(f"  {season} wk{week:<2} {score.source:<16} "
+                  f"spearman {score.spearman:>6}  "
+                  f"rank MAE {score.mean_abs_rank_error:>6}  "
+                  f"top{args.top_n} hit {score.top_n_hit_rate}")
+
+    if not all_scores:
+        print("\nNothing could be scored yet — results are not published for these weeks.")
+        return 0
+
+    weights = weights_from_scores(all_scores)
+    print("\nDerived blend weights:")
+    for name, value in sorted(weights.items(), key=lambda kv: -kv[1]):
+        print(f"  {name:<16} {value}")
+
+    if args.save:
+        path = save_weights(weights, meta={"scored_boards": len(boards)})
+        print(f"\nSaved to {path}. Future 'aadfs rankings' runs will use these.")
+    else:
+        print("\nRe-run with --save to apply these to future blends.")
+    return 0
+
+
 def cmd_serve(args) -> int:
     import uvicorn
 
@@ -286,6 +457,44 @@ def build_parser() -> argparse.ArgumentParser:
     results.add_argument("--season", type=int)
     results.add_argument("--week", type=int)
     results.set_defaults(func=cmd_import_results)
+
+
+    rankings = subparsers.add_parser(
+        "rankings", help="Build this week's consensus player rankings")
+    rankings.add_argument("--csv", nargs="*", help="Your own rankings/projection CSVs")
+    rankings.add_argument("--only", nargs="*", help="Restrict to these source names")
+    rankings.add_argument("--top", type=int, default=24,
+                          help="Players shown per position")
+    rankings.add_argument("--positions", nargs="*", help="Limit to these positions")
+    rankings.add_argument("--min-sources", type=int, default=1, dest="min_sources",
+                          help="Drop players covered by fewer sources than this")
+    rankings.add_argument("--equal-weights", action="store_true", dest="equal_weights",
+                          help="Ignore learned weights and treat sources equally")
+    rankings.add_argument("--refresh", action="store_true", help="Bypass the cache")
+    rankings.add_argument("--output-dir", default=None, dest="output_dir",
+                          help="Defaults to <AADFS_DATA>/rankings")
+    rankings.add_argument("--json", action="store_true")
+    rankings.add_argument("--season", type=int)
+    rankings.add_argument("--week", type=int)
+    rankings.set_defaults(func=cmd_rankings)
+
+    sources = subparsers.add_parser("sources", help="Inspect and grade ranking sources")
+    source_subs = sources.add_subparsers(dest="sources_command", required=True)
+
+    doctor = source_subs.add_parser(
+        "doctor", help="Check every source against the live feeds")
+    doctor.add_argument("--season", type=int)
+    doctor.add_argument("--week", type=int)
+    doctor.set_defaults(func=cmd_sources_doctor)
+
+    score = source_subs.add_parser(
+        "score", help="Grade saved boards against real results")
+    score.add_argument("--output-dir", default=None, dest="output_dir",
+                       help="Defaults to <AADFS_DATA>/rankings")
+    score.add_argument("--top-n", type=int, default=12, dest="top_n")
+    score.add_argument("--save", action="store_true",
+                       help="Write the derived weights for future blends")
+    score.set_defaults(func=cmd_sources_score)
 
     serve = subparsers.add_parser("serve", help="Start the web app")
     serve.add_argument("--host", default="127.0.0.1",

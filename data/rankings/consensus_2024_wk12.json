@@ -1,0 +1,8647 @@
+{
+  "season": 2024,
+  "week": 12,
+  "generated_at": "2026-09-21T16:17:07",
+  "sources": [
+    {
+      "source": "sleeper",
+      "kind": "projection",
+      "ok": false,
+      "entries": 0,
+      "weight": 1.0,
+      "error": "network error: 403 Forbidden",
+      "from_cache": false
+    },
+    {
+      "source": "espn",
+      "kind": "projection",
+      "ok": false,
+      "entries": 0,
+      "weight": 1.0,
+      "error": "network error: 403 Forbidden",
+      "from_cache": false
+    },
+    {
+      "source": "nfl_com",
+      "kind": "projection",
+      "ok": false,
+      "entries": 0,
+      "weight": 1.0,
+      "error": "ProxyError: 403 Forbidden",
+      "from_cache": false
+    },
+    {
+      "source": "recent_form",
+      "kind": "model",
+      "ok": true,
+      "entries": 391,
+      "weight": 0.8,
+      "error": null,
+      "from_cache": false
+    }
+  ],
+  "players": [
+    {
+      "position": "QB",
+      "rank": 1,
+      "tier": 1,
+      "name": "Jalen Hurts",
+      "team": "PHI",
+      "opponent": null,
+      "consensus_rank": 1.0,
+      "rank_stdev": 0.0,
+      "best": 1.0,
+      "worst": 1.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 1.0
+      },
+      "mean_points": 26.51,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 2,
+      "tier": 1,
+      "name": "Lamar Jackson",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 2.0,
+      "rank_stdev": 0.0,
+      "best": 2.0,
+      "worst": 2.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 2.0
+      },
+      "mean_points": 25.15,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 3,
+      "tier": 1,
+      "name": "Joe Burrow",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 3.0,
+      "rank_stdev": 0.0,
+      "best": 3.0,
+      "worst": 3.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 3.0
+      },
+      "mean_points": 23.59,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 4,
+      "tier": 1,
+      "name": "Brock Purdy",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 4.0,
+      "rank_stdev": 0.0,
+      "best": 4.0,
+      "worst": 4.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 4.0
+      },
+      "mean_points": 22.69,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 5,
+      "tier": 2,
+      "name": "Josh Allen",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 5.0,
+      "rank_stdev": 0.0,
+      "best": 5.0,
+      "worst": 5.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 5.0
+      },
+      "mean_points": 22.42,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 6,
+      "tier": 2,
+      "name": "Baker Mayfield",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 6.0,
+      "rank_stdev": 0.0,
+      "best": 6.0,
+      "worst": 6.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 6.0
+      },
+      "mean_points": 21.83,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 7,
+      "tier": 2,
+      "name": "Bo Nix",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 7.0,
+      "rank_stdev": 0.0,
+      "best": 7.0,
+      "worst": 7.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 7.0
+      },
+      "mean_points": 21.44,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 8,
+      "tier": 2,
+      "name": "Trevor Lawrence",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 8.0,
+      "rank_stdev": 0.0,
+      "best": 8.0,
+      "worst": 8.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 8.0
+      },
+      "mean_points": 19.74,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 9,
+      "tier": 3,
+      "name": "Jared Goff",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 9.0,
+      "rank_stdev": 0.0,
+      "best": 9.0,
+      "worst": 9.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 9.0
+      },
+      "mean_points": 19.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 10,
+      "tier": 3,
+      "name": "Justin Herbert",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 10.0,
+      "rank_stdev": 0.0,
+      "best": 10.0,
+      "worst": 10.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 10.0
+      },
+      "mean_points": 19.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 11,
+      "tier": 3,
+      "name": "Patrick Mahomes",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 11.0,
+      "rank_stdev": 0.0,
+      "best": 11.0,
+      "worst": 11.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 11.0
+      },
+      "mean_points": 18.43,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 12,
+      "tier": 3,
+      "name": "Jameis Winston",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 12.0,
+      "rank_stdev": 0.0,
+      "best": 12.0,
+      "worst": 12.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 12.0
+      },
+      "mean_points": 17.98,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 13,
+      "tier": 4,
+      "name": "Sam Darnold",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 13.0,
+      "rank_stdev": 0.0,
+      "best": 13.0,
+      "worst": 13.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 13.0
+      },
+      "mean_points": 17.91,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 14,
+      "tier": 4,
+      "name": "Kyler Murray",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 14.0,
+      "rank_stdev": 0.0,
+      "best": 14.0,
+      "worst": 14.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 14.0
+      },
+      "mean_points": 17.77,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 15,
+      "tier": 4,
+      "name": "Matthew Stafford",
+      "team": "LAR",
+      "opponent": null,
+      "consensus_rank": 15.0,
+      "rank_stdev": 0.0,
+      "best": 15.0,
+      "worst": 15.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 15.0
+      },
+      "mean_points": 17.63,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 16,
+      "tier": 4,
+      "name": "Derek Carr",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 16.0,
+      "rank_stdev": 0.0,
+      "best": 16.0,
+      "worst": 16.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 16.0
+      },
+      "mean_points": 17.54,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 17,
+      "tier": 5,
+      "name": "Drake Maye",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 17.0,
+      "rank_stdev": 0.0,
+      "best": 17.0,
+      "worst": 17.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 17.0
+      },
+      "mean_points": 17.23,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 18,
+      "tier": 5,
+      "name": "Jordan Love",
+      "team": "GB",
+      "opponent": null,
+      "consensus_rank": 18.0,
+      "rank_stdev": 0.0,
+      "best": 18.0,
+      "worst": 18.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 18.0
+      },
+      "mean_points": 17.06,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 19,
+      "tier": 5,
+      "name": "Mason Rudolph",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 19.0,
+      "rank_stdev": 0.0,
+      "best": 19.0,
+      "worst": 19.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 19.0
+      },
+      "mean_points": 16.98,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 20,
+      "tier": 5,
+      "name": "Geno Smith",
+      "team": "SEA",
+      "opponent": null,
+      "consensus_rank": 20.0,
+      "rank_stdev": 0.0,
+      "best": 20.0,
+      "worst": 20.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 20.0
+      },
+      "mean_points": 16.64,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 21,
+      "tier": 6,
+      "name": "Anthony Richardson",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 21.0,
+      "rank_stdev": 0.0,
+      "best": 21.0,
+      "worst": 21.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 21.0
+      },
+      "mean_points": 16.45,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 22,
+      "tier": 6,
+      "name": "Russell Wilson",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 22.0,
+      "rank_stdev": 0.0,
+      "best": 22.0,
+      "worst": 22.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 22.0
+      },
+      "mean_points": 16.27,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 23,
+      "tier": 6,
+      "name": "Tua Tagovailoa",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 23.0,
+      "rank_stdev": 0.0,
+      "best": 23.0,
+      "worst": 23.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 23.0
+      },
+      "mean_points": 16.23,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 24,
+      "tier": 6,
+      "name": "Aaron Rodgers",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 24.0,
+      "rank_stdev": 0.0,
+      "best": 24.0,
+      "worst": 24.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 24.0
+      },
+      "mean_points": 15.26,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 25,
+      "tier": 7,
+      "name": "Jayden Daniels",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 25.0,
+      "rank_stdev": 0.0,
+      "best": 25.0,
+      "worst": 25.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 25.0
+      },
+      "mean_points": 15.22,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 26,
+      "tier": 7,
+      "name": "Will Levis",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 26.0,
+      "rank_stdev": 0.0,
+      "best": 26.0,
+      "worst": 26.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 26.0
+      },
+      "mean_points": 14.67,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 27,
+      "tier": 7,
+      "name": "Caleb Williams",
+      "team": "CHI",
+      "opponent": null,
+      "consensus_rank": 27.0,
+      "rank_stdev": 0.0,
+      "best": 27.0,
+      "worst": 27.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 27.0
+      },
+      "mean_points": 14.26,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 28,
+      "tier": 7,
+      "name": "Kirk Cousins",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 28.0,
+      "rank_stdev": 0.0,
+      "best": 28.0,
+      "worst": 28.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 28.0
+      },
+      "mean_points": 14.21,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 29,
+      "tier": 8,
+      "name": "Daniel Jones",
+      "team": "NYG",
+      "opponent": null,
+      "consensus_rank": 29.0,
+      "rank_stdev": 0.0,
+      "best": 29.0,
+      "worst": 29.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 29.0
+      },
+      "mean_points": 13.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 30,
+      "tier": 8,
+      "name": "Justin Fields",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 30.0,
+      "rank_stdev": 0.0,
+      "best": 30.0,
+      "worst": 30.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 30.0
+      },
+      "mean_points": 12.7,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 31,
+      "tier": 8,
+      "name": "C.J. Stroud",
+      "team": "HOU",
+      "opponent": null,
+      "consensus_rank": 31.0,
+      "rank_stdev": 0.0,
+      "best": 31.0,
+      "worst": 31.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 31.0
+      },
+      "mean_points": 12.05,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 32,
+      "tier": 8,
+      "name": "Dak Prescott",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 32.0,
+      "rank_stdev": 0.0,
+      "best": 32.0,
+      "worst": 32.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 32.0
+      },
+      "mean_points": 11.05,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 33,
+      "tier": 9,
+      "name": "Joe Flacco",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 33.0,
+      "rank_stdev": 0.0,
+      "best": 33.0,
+      "worst": 33.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 33.0
+      },
+      "mean_points": 10.87,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 34,
+      "tier": 9,
+      "name": "Gardner Minshew",
+      "team": "LV",
+      "opponent": null,
+      "consensus_rank": 34.0,
+      "rank_stdev": 0.0,
+      "best": 34.0,
+      "worst": 34.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 34.0
+      },
+      "mean_points": 9.57,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 35,
+      "tier": 9,
+      "name": "Bryce Young",
+      "team": "CAR",
+      "opponent": null,
+      "consensus_rank": 35.0,
+      "rank_stdev": 0.0,
+      "best": 35.0,
+      "worst": 35.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 35.0
+      },
+      "mean_points": 9.54,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 36,
+      "tier": 9,
+      "name": "Andy Dalton",
+      "team": "CAR",
+      "opponent": null,
+      "consensus_rank": 36.0,
+      "rank_stdev": 0.0,
+      "best": 36.0,
+      "worst": 36.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 36.0
+      },
+      "mean_points": 9.48,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 37,
+      "tier": 10,
+      "name": "Spencer Rattler",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 37.0,
+      "rank_stdev": 0.0,
+      "best": 37.0,
+      "worst": 37.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 37.0
+      },
+      "mean_points": 8.98,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 38,
+      "tier": 10,
+      "name": "Aidan O'Connell",
+      "team": "LV",
+      "opponent": null,
+      "consensus_rank": 38.0,
+      "rank_stdev": 0.0,
+      "best": 38.0,
+      "worst": 38.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 38.0
+      },
+      "mean_points": 7.08,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 39,
+      "tier": 10,
+      "name": "Cooper Rush",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 39.0,
+      "rank_stdev": 0.0,
+      "best": 39.0,
+      "worst": 39.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 39.0
+      },
+      "mean_points": 6.85,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 40,
+      "tier": 10,
+      "name": "Deshaun Watson",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 40.0,
+      "rank_stdev": 0.0,
+      "best": 40.0,
+      "worst": 40.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 40.0
+      },
+      "mean_points": 6.77,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 41,
+      "tier": 11,
+      "name": "Mac Jones",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 41.0,
+      "rank_stdev": 0.0,
+      "best": 41.0,
+      "worst": 41.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 41.0
+      },
+      "mean_points": 4.23,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 42,
+      "tier": 11,
+      "name": "Jake Haener",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 42.0,
+      "rank_stdev": 0.0,
+      "best": 42.0,
+      "worst": 42.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 42.0
+      },
+      "mean_points": 3.73,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 43,
+      "tier": 11,
+      "name": "Dorian Thompson-Robinson",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 43.0,
+      "rank_stdev": 0.0,
+      "best": 43.0,
+      "worst": 43.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 43.0
+      },
+      "mean_points": 2.84,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 44,
+      "tier": 11,
+      "name": "Hendon Hooker",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 44.0,
+      "rank_stdev": 0.0,
+      "best": 44.0,
+      "worst": 44.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 44.0
+      },
+      "mean_points": 0.89,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 45,
+      "tier": 12,
+      "name": "Michael Penix",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 45.0,
+      "rank_stdev": 0.0,
+      "best": 45.0,
+      "worst": 45.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 45.0
+      },
+      "mean_points": 0.76,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 46,
+      "tier": 12,
+      "name": "Kenny Pickett",
+      "team": "PHI",
+      "opponent": null,
+      "consensus_rank": 46.0,
+      "rank_stdev": 0.0,
+      "best": 46.0,
+      "worst": 46.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 46.0
+      },
+      "mean_points": 0.15,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 47,
+      "tier": 12,
+      "name": "Clayton Tune",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 47.0,
+      "rank_stdev": 0.0,
+      "best": 47.0,
+      "worst": 47.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 47.0
+      },
+      "mean_points": 0.05,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "QB",
+      "rank": 48,
+      "tier": 12,
+      "name": "Mitchell Trubisky",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 48.0,
+      "rank_stdev": 0.0,
+      "best": 48.0,
+      "worst": 48.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 48.0
+      },
+      "mean_points": -0.2,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 1,
+      "tier": 1,
+      "name": "Joe Mixon",
+      "team": "HOU",
+      "opponent": null,
+      "consensus_rank": 1.0,
+      "rank_stdev": 0.0,
+      "best": 1.0,
+      "worst": 1.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 1.0
+      },
+      "mean_points": 23.32,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 2,
+      "tier": 1,
+      "name": "Bijan Robinson",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 2.0,
+      "rank_stdev": 0.0,
+      "best": 2.0,
+      "worst": 2.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 2.0
+      },
+      "mean_points": 20.02,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 3,
+      "tier": 1,
+      "name": "Saquon Barkley",
+      "team": "PHI",
+      "opponent": null,
+      "consensus_rank": 3.0,
+      "rank_stdev": 0.0,
+      "best": 3.0,
+      "worst": 3.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 3.0
+      },
+      "mean_points": 19.37,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 4,
+      "tier": 1,
+      "name": "Derrick Henry",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 4.0,
+      "rank_stdev": 0.0,
+      "best": 4.0,
+      "worst": 4.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 4.0
+      },
+      "mean_points": 19.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 5,
+      "tier": 2,
+      "name": "Jahmyr Gibbs",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 5.0,
+      "rank_stdev": 0.0,
+      "best": 5.0,
+      "worst": 5.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 5.0
+      },
+      "mean_points": 17.52,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 6,
+      "tier": 2,
+      "name": "Devon Achane",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 6.0,
+      "rank_stdev": 0.0,
+      "best": 6.0,
+      "worst": 6.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 6.0
+      },
+      "mean_points": 17.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 7,
+      "tier": 2,
+      "name": "Josh Jacobs",
+      "team": "GB",
+      "opponent": null,
+      "consensus_rank": 7.0,
+      "rank_stdev": 0.0,
+      "best": 7.0,
+      "worst": 7.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 7.0
+      },
+      "mean_points": 17.28,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 8,
+      "tier": 2,
+      "name": "Rachaad White",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 8.0,
+      "rank_stdev": 0.0,
+      "best": 8.0,
+      "worst": 8.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 8.0
+      },
+      "mean_points": 16.57,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 9,
+      "tier": 3,
+      "name": "Breece Hall",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 9.0,
+      "rank_stdev": 0.0,
+      "best": 9.0,
+      "worst": 9.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 9.0
+      },
+      "mean_points": 16.55,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 10,
+      "tier": 3,
+      "name": "James Cook",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 10.0,
+      "rank_stdev": 0.0,
+      "best": 10.0,
+      "worst": 10.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 10.0
+      },
+      "mean_points": 15.52,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 11,
+      "tier": 3,
+      "name": "Chuba Hubbard",
+      "team": "CAR",
+      "opponent": null,
+      "consensus_rank": 11.0,
+      "rank_stdev": 0.0,
+      "best": 11.0,
+      "worst": 11.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 11.0
+      },
+      "mean_points": 15.04,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 12,
+      "tier": 3,
+      "name": "Chase Brown",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 12.0,
+      "rank_stdev": 0.0,
+      "best": 12.0,
+      "worst": 12.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 12.0
+      },
+      "mean_points": 14.83,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 13,
+      "tier": 4,
+      "name": "J.K. Dobbins",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 13.0,
+      "rank_stdev": 0.0,
+      "best": 13.0,
+      "worst": 13.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 13.0
+      },
+      "mean_points": 14.83,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 14,
+      "tier": 4,
+      "name": "David Montgomery",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 14.0,
+      "rank_stdev": 0.0,
+      "best": 14.0,
+      "worst": 14.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 14.0
+      },
+      "mean_points": 14.6,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 15,
+      "tier": 4,
+      "name": "Najee Harris",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 15.0,
+      "rank_stdev": 0.0,
+      "best": 15.0,
+      "worst": 15.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 15.0
+      },
+      "mean_points": 14.52,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 16,
+      "tier": 4,
+      "name": "D'Andre Swift",
+      "team": "CHI",
+      "opponent": null,
+      "consensus_rank": 16.0,
+      "rank_stdev": 0.0,
+      "best": 16.0,
+      "worst": 16.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 16.0
+      },
+      "mean_points": 14.48,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 17,
+      "tier": 5,
+      "name": "Kareem Hunt",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 17.0,
+      "rank_stdev": 0.0,
+      "best": 17.0,
+      "worst": 17.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 17.0
+      },
+      "mean_points": 14.36,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 18,
+      "tier": 5,
+      "name": "Kenneth Walker",
+      "team": "SEA",
+      "opponent": null,
+      "consensus_rank": 18.0,
+      "rank_stdev": 0.0,
+      "best": 18.0,
+      "worst": 18.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 18.0
+      },
+      "mean_points": 14.16,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 19,
+      "tier": 5,
+      "name": "Alvin Kamara",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 19.0,
+      "rank_stdev": 0.0,
+      "best": 19.0,
+      "worst": 19.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 19.0
+      },
+      "mean_points": 14.05,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 20,
+      "tier": 5,
+      "name": "Tyrone Tracy",
+      "team": "NYG",
+      "opponent": null,
+      "consensus_rank": 20.0,
+      "rank_stdev": 0.0,
+      "best": 20.0,
+      "worst": 20.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 20.0
+      },
+      "mean_points": 13.74,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 21,
+      "tier": 6,
+      "name": "James Conner",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 21.0,
+      "rank_stdev": 0.0,
+      "best": 21.0,
+      "worst": 21.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 21.0
+      },
+      "mean_points": 13.58,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 22,
+      "tier": 6,
+      "name": "Kyren Williams",
+      "team": "LAR",
+      "opponent": null,
+      "consensus_rank": 22.0,
+      "rank_stdev": 0.0,
+      "best": 22.0,
+      "worst": 22.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 22.0
+      },
+      "mean_points": 13.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 23,
+      "tier": 6,
+      "name": "Christian McCaffrey",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 23.0,
+      "rank_stdev": 0.0,
+      "best": 23.0,
+      "worst": 23.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 23.0
+      },
+      "mean_points": 13.15,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 24,
+      "tier": 6,
+      "name": "Bucky Irving",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 24.0,
+      "rank_stdev": 0.0,
+      "best": 24.0,
+      "worst": 24.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 24.0
+      },
+      "mean_points": 13.14,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 25,
+      "tier": 7,
+      "name": "Rhamondre Stevenson",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 25.0,
+      "rank_stdev": 0.0,
+      "best": 25.0,
+      "worst": 25.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 25.0
+      },
+      "mean_points": 12.9,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 26,
+      "tier": 7,
+      "name": "Brian Robinson",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 26.0,
+      "rank_stdev": 0.0,
+      "best": 26.0,
+      "worst": 26.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 26.0
+      },
+      "mean_points": 11.63,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 27,
+      "tier": 7,
+      "name": "Jonathan Taylor",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 27.0,
+      "rank_stdev": 0.0,
+      "best": 27.0,
+      "worst": 27.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 27.0
+      },
+      "mean_points": 11.32,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 28,
+      "tier": 7,
+      "name": "Aaron Jones",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 28.0,
+      "rank_stdev": 0.0,
+      "best": 28.0,
+      "worst": 28.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 28.0
+      },
+      "mean_points": 11.14,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 29,
+      "tier": 8,
+      "name": "Tony Pollard",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 29.0,
+      "rank_stdev": 0.0,
+      "best": 29.0,
+      "worst": 29.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 29.0
+      },
+      "mean_points": 11.02,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 30,
+      "tier": 8,
+      "name": "Austin Ekeler",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 30.0,
+      "rank_stdev": 0.0,
+      "best": 30.0,
+      "worst": 30.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 30.0
+      },
+      "mean_points": 10.93,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 31,
+      "tier": 8,
+      "name": "Javonte Williams",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 31.0,
+      "rank_stdev": 0.0,
+      "best": 31.0,
+      "worst": 31.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 31.0
+      },
+      "mean_points": 10.45,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 32,
+      "tier": 8,
+      "name": "Sean Tucker",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 32.0,
+      "rank_stdev": 0.0,
+      "best": 32.0,
+      "worst": 32.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 32.0
+      },
+      "mean_points": 10.3,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 33,
+      "tier": 9,
+      "name": "Rico Dowdle",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 33.0,
+      "rank_stdev": 0.0,
+      "best": 33.0,
+      "worst": 33.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 33.0
+      },
+      "mean_points": 9.67,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 34,
+      "tier": 9,
+      "name": "Alexander Mattison",
+      "team": "LV",
+      "opponent": null,
+      "consensus_rank": 34.0,
+      "rank_stdev": 0.0,
+      "best": 34.0,
+      "worst": 34.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 34.0
+      },
+      "mean_points": 9.54,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 35,
+      "tier": 9,
+      "name": "Ray Davis",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 35.0,
+      "rank_stdev": 0.0,
+      "best": 35.0,
+      "worst": 35.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 35.0
+      },
+      "mean_points": 8.08,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 36,
+      "tier": 9,
+      "name": "Tank Bigsby",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 36.0,
+      "rank_stdev": 0.0,
+      "best": 36.0,
+      "worst": 36.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 36.0
+      },
+      "mean_points": 7.68,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 37,
+      "tier": 10,
+      "name": "Isaac Guerendo",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 37.0,
+      "rank_stdev": 0.0,
+      "best": 37.0,
+      "worst": 37.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 37.0
+      },
+      "mean_points": 7.2,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 38,
+      "tier": 10,
+      "name": "Tyler Allgeier",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 38.0,
+      "rank_stdev": 0.0,
+      "best": 38.0,
+      "worst": 38.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 38.0
+      },
+      "mean_points": 6.95,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 39,
+      "tier": 10,
+      "name": "Jaylen Warren",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 39.0,
+      "rank_stdev": 0.0,
+      "best": 39.0,
+      "worst": 39.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 39.0
+      },
+      "mean_points": 6.88,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 40,
+      "tier": 10,
+      "name": "Tyler Goodson",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 40.0,
+      "rank_stdev": 0.0,
+      "best": 40.0,
+      "worst": 40.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 40.0
+      },
+      "mean_points": 6.88,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 41,
+      "tier": 11,
+      "name": "Trey Benson",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 41.0,
+      "rank_stdev": 0.0,
+      "best": 41.0,
+      "worst": 41.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 41.0
+      },
+      "mean_points": 6.32,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 42,
+      "tier": 11,
+      "name": "Raheem Mostert",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 42.0,
+      "rank_stdev": 0.0,
+      "best": 42.0,
+      "worst": 42.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 42.0
+      },
+      "mean_points": 6.1,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 43,
+      "tier": 11,
+      "name": "Nick Chubb",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 43.0,
+      "rank_stdev": 0.0,
+      "best": 43.0,
+      "worst": 43.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 43.0
+      },
+      "mean_points": 5.97,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 44,
+      "tier": 11,
+      "name": "Cam Akers",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 44.0,
+      "rank_stdev": 0.0,
+      "best": 44.0,
+      "worst": 44.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 44.0
+      },
+      "mean_points": 5.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 45,
+      "tier": 12,
+      "name": "Emari Demercado",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 45.0,
+      "rank_stdev": 0.0,
+      "best": 45.0,
+      "worst": 45.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 45.0
+      },
+      "mean_points": 5.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 46,
+      "tier": 12,
+      "name": "Samaje Perine",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 46.0,
+      "rank_stdev": 0.0,
+      "best": 46.0,
+      "worst": 46.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 46.0
+      },
+      "mean_points": 5.06,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 47,
+      "tier": 12,
+      "name": "Roschon Johnson",
+      "team": "CHI",
+      "opponent": null,
+      "consensus_rank": 47.0,
+      "rank_stdev": 0.0,
+      "best": 47.0,
+      "worst": 47.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 47.0
+      },
+      "mean_points": 5.04,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 48,
+      "tier": 12,
+      "name": "Justice Hill",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 48.0,
+      "rank_stdev": 0.0,
+      "best": 48.0,
+      "worst": 48.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 48.0
+      },
+      "mean_points": 4.97,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 49,
+      "tier": 13,
+      "name": "Ameer Abdullah",
+      "team": "LV",
+      "opponent": null,
+      "consensus_rank": 49.0,
+      "rank_stdev": 0.0,
+      "best": 49.0,
+      "worst": 49.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 49.0
+      },
+      "mean_points": 4.55,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 50,
+      "tier": 13,
+      "name": "Jaleel McLaughlin",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 50.0,
+      "rank_stdev": 0.0,
+      "best": 50.0,
+      "worst": 50.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 50.0
+      },
+      "mean_points": 4.28,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 51,
+      "tier": 13,
+      "name": "Emanuel Wilson",
+      "team": "GB",
+      "opponent": null,
+      "consensus_rank": 51.0,
+      "rank_stdev": 0.0,
+      "best": 51.0,
+      "worst": 51.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 51.0
+      },
+      "mean_points": 4.26,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 52,
+      "tier": 13,
+      "name": "Zach Charbonnet",
+      "team": "SEA",
+      "opponent": null,
+      "consensus_rank": 52.0,
+      "rank_stdev": 0.0,
+      "best": 52.0,
+      "worst": 52.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 52.0
+      },
+      "mean_points": 4.22,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 53,
+      "tier": 14,
+      "name": "Kimani Vidal",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 53.0,
+      "rank_stdev": 0.0,
+      "best": 53.0,
+      "worst": 53.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 53.0
+      },
+      "mean_points": 4.2,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 54,
+      "tier": 14,
+      "name": "Gus Edwards",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 54.0,
+      "rank_stdev": 0.0,
+      "best": 54.0,
+      "worst": 54.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 54.0
+      },
+      "mean_points": 4.1,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 55,
+      "tier": 14,
+      "name": "Jordan Mason",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 55.0,
+      "rank_stdev": 0.0,
+      "best": 55.0,
+      "worst": 55.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 55.0
+      },
+      "mean_points": 4.04,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 56,
+      "tier": 14,
+      "name": "Ezekiel Elliott",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 56.0,
+      "rank_stdev": 0.0,
+      "best": 56.0,
+      "worst": 56.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 56.0
+      },
+      "mean_points": 4.02,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 57,
+      "tier": 15,
+      "name": "Jamycal Hasty",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 57.0,
+      "rank_stdev": 0.0,
+      "best": 57.0,
+      "worst": 57.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 57.0
+      },
+      "mean_points": 3.82,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 58,
+      "tier": 15,
+      "name": "Zack Moss",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 58.0,
+      "rank_stdev": 0.0,
+      "best": 58.0,
+      "worst": 58.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 58.0
+      },
+      "mean_points": 3.8,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 59,
+      "tier": 15,
+      "name": "Kenneth Gainwell",
+      "team": "PHI",
+      "opponent": null,
+      "consensus_rank": 59.0,
+      "rank_stdev": 0.0,
+      "best": 59.0,
+      "worst": 59.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 59.0
+      },
+      "mean_points": 3.78,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 60,
+      "tier": 15,
+      "name": "Dameon Pierce",
+      "team": "HOU",
+      "opponent": null,
+      "consensus_rank": 60.0,
+      "rank_stdev": 0.0,
+      "best": 60.0,
+      "worst": 60.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 60.0
+      },
+      "mean_points": 3.75,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 61,
+      "tier": 16,
+      "name": "Tyjae Spears",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 61.0,
+      "rank_stdev": 0.0,
+      "best": 61.0,
+      "worst": 61.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 61.0
+      },
+      "mean_points": 3.7,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 62,
+      "tier": 16,
+      "name": "Devin Singletary",
+      "team": "NYG",
+      "opponent": null,
+      "consensus_rank": 62.0,
+      "rank_stdev": 0.0,
+      "best": 62.0,
+      "worst": 62.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 62.0
+      },
+      "mean_points": 3.55,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 63,
+      "tier": 16,
+      "name": "D'Ernest Johnson",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 63.0,
+      "rank_stdev": 0.0,
+      "best": 63.0,
+      "worst": 63.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 63.0
+      },
+      "mean_points": 3.52,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 64,
+      "tier": 16,
+      "name": "Kyle Juszczyk",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 64.0,
+      "rank_stdev": 0.0,
+      "best": 64.0,
+      "worst": 64.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 64.0
+      },
+      "mean_points": 3.47,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 65,
+      "tier": 17,
+      "name": "Travis Etienne",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 65.0,
+      "rank_stdev": 0.0,
+      "best": 65.0,
+      "worst": 65.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 65.0
+      },
+      "mean_points": 3.38,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 66,
+      "tier": 17,
+      "name": "Ty Johnson",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 66.0,
+      "rank_stdev": 0.0,
+      "best": 66.0,
+      "worst": 66.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 66.0
+      },
+      "mean_points": 3.18,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 67,
+      "tier": 17,
+      "name": "Kendre Miller",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 67.0,
+      "rank_stdev": 0.0,
+      "best": 67.0,
+      "worst": 67.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 67.0
+      },
+      "mean_points": 3.15,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 68,
+      "tier": 17,
+      "name": "Christopher Brooks",
+      "team": "GB",
+      "opponent": null,
+      "consensus_rank": 68.0,
+      "rank_stdev": 0.0,
+      "best": 68.0,
+      "worst": 68.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 68.0
+      },
+      "mean_points": 3.05,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 69,
+      "tier": 18,
+      "name": "D'Onta Foreman",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 69.0,
+      "rank_stdev": 0.0,
+      "best": 69.0,
+      "worst": 69.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 69.0
+      },
+      "mean_points": 2.93,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 70,
+      "tier": 18,
+      "name": "Jerome Ford",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 70.0,
+      "rank_stdev": 0.0,
+      "best": 70.0,
+      "worst": 70.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 70.0
+      },
+      "mean_points": 2.83,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 71,
+      "tier": 18,
+      "name": "Chris Rodriguez",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 71.0,
+      "rank_stdev": 0.0,
+      "best": 71.0,
+      "worst": 71.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 71.0
+      },
+      "mean_points": 2.8,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 72,
+      "tier": 18,
+      "name": "Braelon Allen",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 72.0,
+      "rank_stdev": 0.0,
+      "best": 72.0,
+      "worst": 72.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 72.0
+      },
+      "mean_points": 2.75,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 73,
+      "tier": 19,
+      "name": "Zamir White",
+      "team": "LV",
+      "opponent": null,
+      "consensus_rank": 73.0,
+      "rank_stdev": 0.0,
+      "best": 73.0,
+      "worst": 73.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 73.0
+      },
+      "mean_points": 2.75,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 74,
+      "tier": 19,
+      "name": "Miles Sanders",
+      "team": "CAR",
+      "opponent": null,
+      "consensus_rank": 74.0,
+      "rank_stdev": 0.0,
+      "best": 74.0,
+      "worst": 74.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 74.0
+      },
+      "mean_points": 2.72,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 75,
+      "tier": 19,
+      "name": "Patrick Ricard",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 75.0,
+      "rank_stdev": 0.0,
+      "best": 75.0,
+      "worst": 75.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 75.0
+      },
+      "mean_points": 2.6,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 76,
+      "tier": 19,
+      "name": "Pierre Strong",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 76.0,
+      "rank_stdev": 0.0,
+      "best": 76.0,
+      "worst": 76.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 76.0
+      },
+      "mean_points": 2.58,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 77,
+      "tier": 20,
+      "name": "Audric Estime",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 77.0,
+      "rank_stdev": 0.0,
+      "best": 77.0,
+      "worst": 77.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 77.0
+      },
+      "mean_points": 2.57,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 78,
+      "tier": 20,
+      "name": "Antonio Gibson",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 78.0,
+      "rank_stdev": 0.0,
+      "best": 78.0,
+      "worst": 78.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 78.0
+      },
+      "mean_points": 2.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 79,
+      "tier": 20,
+      "name": "Jeremy McNichols",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 79.0,
+      "rank_stdev": 0.0,
+      "best": 79.0,
+      "worst": 79.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 79.0
+      },
+      "mean_points": 2.47,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 80,
+      "tier": 20,
+      "name": "Jordan Mims",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 80.0,
+      "rank_stdev": 0.0,
+      "best": 80.0,
+      "worst": 80.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 80.0
+      },
+      "mean_points": 2.33,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 81,
+      "tier": 21,
+      "name": "Alec Ingold",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 81.0,
+      "rank_stdev": 0.0,
+      "best": 81.0,
+      "worst": 81.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 81.0
+      },
+      "mean_points": 2.3,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 82,
+      "tier": 21,
+      "name": "Trey Sermon",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 82.0,
+      "rank_stdev": 0.0,
+      "best": 82.0,
+      "worst": 82.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 82.0
+      },
+      "mean_points": 2.28,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 83,
+      "tier": 21,
+      "name": "Julius Chestnut",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 83.0,
+      "rank_stdev": 0.0,
+      "best": 83.0,
+      "worst": 83.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 83.0
+      },
+      "mean_points": 2.12,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 84,
+      "tier": 21,
+      "name": "Patrick Taylor",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 84.0,
+      "rank_stdev": 0.0,
+      "best": 84.0,
+      "worst": 84.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 84.0
+      },
+      "mean_points": 2.1,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 85,
+      "tier": 22,
+      "name": "Dalvin Cook",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 85.0,
+      "rank_stdev": 0.0,
+      "best": 85.0,
+      "worst": 85.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 85.0
+      },
+      "mean_points": 1.75,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 86,
+      "tier": 22,
+      "name": "Blake Corum",
+      "team": "LAR",
+      "opponent": null,
+      "consensus_rank": 86.0,
+      "rank_stdev": 0.0,
+      "best": 86.0,
+      "worst": 86.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 86.0
+      },
+      "mean_points": 1.72,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 87,
+      "tier": 22,
+      "name": "Jaylen Wright",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 87.0,
+      "rank_stdev": 0.0,
+      "best": 87.0,
+      "worst": 87.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 87.0
+      },
+      "mean_points": 1.66,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 88,
+      "tier": 22,
+      "name": "Jase McClellan",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 88.0,
+      "rank_stdev": 0.0,
+      "best": 88.0,
+      "worst": 88.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 88.0
+      },
+      "mean_points": 1.6,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 89,
+      "tier": 23,
+      "name": "Will Shipley",
+      "team": "PHI",
+      "opponent": null,
+      "consensus_rank": 89.0,
+      "rank_stdev": 0.0,
+      "best": 89.0,
+      "worst": 89.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 89.0
+      },
+      "mean_points": 1.53,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 90,
+      "tier": 23,
+      "name": "Craig Reynolds",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 90.0,
+      "rank_stdev": 0.0,
+      "best": 90.0,
+      "worst": 90.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 90.0
+      },
+      "mean_points": 1.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 91,
+      "tier": 23,
+      "name": "Hassan Haskins",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 91.0,
+      "rank_stdev": 0.0,
+      "best": 91.0,
+      "worst": 91.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 91.0
+      },
+      "mean_points": 1.44,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 92,
+      "tier": 23,
+      "name": "Isaiah Davis",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 92.0,
+      "rank_stdev": 0.0,
+      "best": 92.0,
+      "worst": 92.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 92.0
+      },
+      "mean_points": 1.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 93,
+      "tier": 24,
+      "name": "Michael Burton",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 93.0,
+      "rank_stdev": 0.0,
+      "best": 93.0,
+      "worst": 93.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 93.0
+      },
+      "mean_points": 1.23,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 94,
+      "tier": 24,
+      "name": "Carson Steele",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 94.0,
+      "rank_stdev": 0.0,
+      "best": 94.0,
+      "worst": 94.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 94.0
+      },
+      "mean_points": 1.2,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 95,
+      "tier": 24,
+      "name": "Eric Gray",
+      "team": "NYG",
+      "opponent": null,
+      "consensus_rank": 95.0,
+      "rank_stdev": 0.0,
+      "best": 95.0,
+      "worst": 95.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 95.0
+      },
+      "mean_points": 1.17,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 96,
+      "tier": 24,
+      "name": "Ty Chandler",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 96.0,
+      "rank_stdev": 0.0,
+      "best": 96.0,
+      "worst": 96.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 96.0
+      },
+      "mean_points": 1.1,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 97,
+      "tier": 25,
+      "name": "Cordarrelle Patterson",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 97.0,
+      "rank_stdev": 0.0,
+      "best": 97.0,
+      "worst": 97.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 97.0
+      },
+      "mean_points": 0.95,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 98,
+      "tier": 25,
+      "name": "Jamaal Williams",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 98.0,
+      "rank_stdev": 0.0,
+      "best": 98.0,
+      "worst": 98.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 98.0
+      },
+      "mean_points": 0.93,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 99,
+      "tier": 25,
+      "name": "Dare Ogunbowale",
+      "team": "HOU",
+      "opponent": null,
+      "consensus_rank": 99.0,
+      "rank_stdev": 0.0,
+      "best": 99.0,
+      "worst": 99.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 99.0
+      },
+      "mean_points": 0.73,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 100,
+      "tier": 25,
+      "name": "Sione Vaki",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 100.0,
+      "rank_stdev": 0.0,
+      "best": 100.0,
+      "worst": 100.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 100.0
+      },
+      "mean_points": 0.7,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 101,
+      "tier": 26,
+      "name": "Hunter Luepke",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 101.0,
+      "rank_stdev": 0.0,
+      "best": 101.0,
+      "worst": 101.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 101.0
+      },
+      "mean_points": 0.63,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 102,
+      "tier": 26,
+      "name": "DeeJay Dallas",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 102.0,
+      "rank_stdev": 0.0,
+      "best": 102.0,
+      "worst": 102.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 102.0
+      },
+      "mean_points": 0.6,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "RB",
+      "rank": 103,
+      "tier": 26,
+      "name": "Adam Prentice",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 103.0,
+      "rank_stdev": 0.0,
+      "best": 103.0,
+      "worst": 103.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 103.0
+      },
+      "mean_points": 0.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 1,
+      "tier": 1,
+      "name": "George Kittle",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 1.0,
+      "rank_stdev": 0.0,
+      "best": 1.0,
+      "worst": 1.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 1.0
+      },
+      "mean_points": 16.88,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 2,
+      "tier": 1,
+      "name": "Taysom Hill",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 2.0,
+      "rank_stdev": 0.0,
+      "best": 2.0,
+      "worst": 2.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 2.0
+      },
+      "mean_points": 15.94,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 3,
+      "tier": 1,
+      "name": "Brock Bowers",
+      "team": "LV",
+      "opponent": null,
+      "consensus_rank": 3.0,
+      "rank_stdev": 0.0,
+      "best": 3.0,
+      "worst": 3.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 3.0
+      },
+      "mean_points": 14.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 4,
+      "tier": 1,
+      "name": "Cade Otton",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 4.0,
+      "rank_stdev": 0.0,
+      "best": 4.0,
+      "worst": 4.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 4.0
+      },
+      "mean_points": 14.16,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 5,
+      "tier": 2,
+      "name": "Jonnu Smith",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 5.0,
+      "rank_stdev": 0.0,
+      "best": 5.0,
+      "worst": 5.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 5.0
+      },
+      "mean_points": 12.26,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 6,
+      "tier": 2,
+      "name": "David Njoku",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 6.0,
+      "rank_stdev": 0.0,
+      "best": 6.0,
+      "worst": 6.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 6.0
+      },
+      "mean_points": 11.76,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 7,
+      "tier": 2,
+      "name": "Trey McBride",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 7.0,
+      "rank_stdev": 0.0,
+      "best": 7.0,
+      "worst": 7.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 7.0
+      },
+      "mean_points": 11.68,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 8,
+      "tier": 2,
+      "name": "Travis Kelce",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 8.0,
+      "rank_stdev": 0.0,
+      "best": 8.0,
+      "worst": 8.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 8.0
+      },
+      "mean_points": 11.38,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 9,
+      "tier": 3,
+      "name": "Mark Andrews",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 9.0,
+      "rank_stdev": 0.0,
+      "best": 9.0,
+      "worst": 9.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 9.0
+      },
+      "mean_points": 11.15,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 10,
+      "tier": 3,
+      "name": "Sam LaPorta",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 10.0,
+      "rank_stdev": 0.0,
+      "best": 10.0,
+      "worst": 10.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 10.0
+      },
+      "mean_points": 9.28,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 11,
+      "tier": 3,
+      "name": "Zach Ertz",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 11.0,
+      "rank_stdev": 0.0,
+      "best": 11.0,
+      "worst": 11.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 11.0
+      },
+      "mean_points": 8.97,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 12,
+      "tier": 3,
+      "name": "Evan Engram",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 12.0,
+      "rank_stdev": 0.0,
+      "best": 12.0,
+      "worst": 12.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 12.0
+      },
+      "mean_points": 8.68,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 13,
+      "tier": 4,
+      "name": "Hunter Henry",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 13.0,
+      "rank_stdev": 0.0,
+      "best": 13.0,
+      "worst": 13.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 13.0
+      },
+      "mean_points": 8.68,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 14,
+      "tier": 4,
+      "name": "Kyle Pitts",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 14.0,
+      "rank_stdev": 0.0,
+      "best": 14.0,
+      "worst": 14.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 14.0
+      },
+      "mean_points": 8.68,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 15,
+      "tier": 4,
+      "name": "Cole Kmet",
+      "team": "CHI",
+      "opponent": null,
+      "consensus_rank": 15.0,
+      "rank_stdev": 0.0,
+      "best": 15.0,
+      "worst": 15.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 15.0
+      },
+      "mean_points": 8.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 16,
+      "tier": 4,
+      "name": "Mike Gesicki",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 16.0,
+      "rank_stdev": 0.0,
+      "best": 16.0,
+      "worst": 16.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 16.0
+      },
+      "mean_points": 7.8,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 17,
+      "tier": 5,
+      "name": "Will Dissly",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 17.0,
+      "rank_stdev": 0.0,
+      "best": 17.0,
+      "worst": 17.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 17.0
+      },
+      "mean_points": 7.78,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 18,
+      "tier": 5,
+      "name": "Josh Oliver",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 18.0,
+      "rank_stdev": 0.0,
+      "best": 18.0,
+      "worst": 18.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 18.0
+      },
+      "mean_points": 7.48,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 19,
+      "tier": 5,
+      "name": "Ja'Tavion Sanders",
+      "team": "CAR",
+      "opponent": null,
+      "consensus_rank": 19.0,
+      "rank_stdev": 0.0,
+      "best": 19.0,
+      "worst": 19.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 19.0
+      },
+      "mean_points": 7.24,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 20,
+      "tier": 5,
+      "name": "Noah Fant",
+      "team": "SEA",
+      "opponent": null,
+      "consensus_rank": 20.0,
+      "rank_stdev": 0.0,
+      "best": 20.0,
+      "worst": 20.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 20.0
+      },
+      "mean_points": 7.17,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 21,
+      "tier": 6,
+      "name": "Theo Johnson",
+      "team": "NYG",
+      "opponent": null,
+      "consensus_rank": 21.0,
+      "rank_stdev": 0.0,
+      "best": 21.0,
+      "worst": 21.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 21.0
+      },
+      "mean_points": 6.95,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 22,
+      "tier": 6,
+      "name": "Dalton Kincaid",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 22.0,
+      "rank_stdev": 0.0,
+      "best": 22.0,
+      "worst": 22.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 22.0
+      },
+      "mean_points": 6.9,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 23,
+      "tier": 6,
+      "name": "Tucker Kraft",
+      "team": "GB",
+      "opponent": null,
+      "consensus_rank": 23.0,
+      "rank_stdev": 0.0,
+      "best": 23.0,
+      "worst": 23.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 23.0
+      },
+      "mean_points": 6.84,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 24,
+      "tier": 6,
+      "name": "Noah Gray",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 24.0,
+      "rank_stdev": 0.0,
+      "best": 24.0,
+      "worst": 24.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 24.0
+      },
+      "mean_points": 6.3,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 25,
+      "tier": 7,
+      "name": "Dallas Goedert",
+      "team": "PHI",
+      "opponent": null,
+      "consensus_rank": 25.0,
+      "rank_stdev": 0.0,
+      "best": 25.0,
+      "worst": 25.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 25.0
+      },
+      "mean_points": 6.03,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 26,
+      "tier": 7,
+      "name": "T.J. Hockenson",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 26.0,
+      "rank_stdev": 0.0,
+      "best": 26.0,
+      "worst": 26.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 26.0
+      },
+      "mean_points": 5.9,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 27,
+      "tier": 7,
+      "name": "Juwan Johnson",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 27.0,
+      "rank_stdev": 0.0,
+      "best": 27.0,
+      "worst": 27.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 27.0
+      },
+      "mean_points": 5.78,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 28,
+      "tier": 7,
+      "name": "Dalton Schultz",
+      "team": "HOU",
+      "opponent": null,
+      "consensus_rank": 28.0,
+      "rank_stdev": 0.0,
+      "best": 28.0,
+      "worst": 28.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 28.0
+      },
+      "mean_points": 5.45,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 29,
+      "tier": 8,
+      "name": "Nate Adkins",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 29.0,
+      "rank_stdev": 0.0,
+      "best": 29.0,
+      "worst": 29.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 29.0
+      },
+      "mean_points": 5.17,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 30,
+      "tier": 8,
+      "name": "Colby Parkinson",
+      "team": "LAR",
+      "opponent": null,
+      "consensus_rank": 30.0,
+      "rank_stdev": 0.0,
+      "best": 30.0,
+      "worst": 30.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 30.0
+      },
+      "mean_points": 5.1,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 31,
+      "tier": 8,
+      "name": "Ben Sinnott",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 31.0,
+      "rank_stdev": 0.0,
+      "best": 31.0,
+      "worst": 31.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 31.0
+      },
+      "mean_points": 4.65,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 32,
+      "tier": 8,
+      "name": "Pat Freiermuth",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 32.0,
+      "rank_stdev": 0.0,
+      "best": 32.0,
+      "worst": 32.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 32.0
+      },
+      "mean_points": 4.64,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 33,
+      "tier": 9,
+      "name": "Grant Calcaterra",
+      "team": "PHI",
+      "opponent": null,
+      "consensus_rank": 33.0,
+      "rank_stdev": 0.0,
+      "best": 33.0,
+      "worst": 33.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 33.0
+      },
+      "mean_points": 4.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 34,
+      "tier": 9,
+      "name": "Jake Ferguson",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 34.0,
+      "rank_stdev": 0.0,
+      "best": 34.0,
+      "worst": 34.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 34.0
+      },
+      "mean_points": 4.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 35,
+      "tier": 9,
+      "name": "Tanner Hudson",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 35.0,
+      "rank_stdev": 0.0,
+      "best": 35.0,
+      "worst": 35.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 35.0
+      },
+      "mean_points": 4.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 36,
+      "tier": 9,
+      "name": "Dawson Knox",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 36.0,
+      "rank_stdev": 0.0,
+      "best": 36.0,
+      "worst": 36.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 36.0
+      },
+      "mean_points": 4.45,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 37,
+      "tier": 10,
+      "name": "Foster Moreau",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 37.0,
+      "rank_stdev": 0.0,
+      "best": 37.0,
+      "worst": 37.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 37.0
+      },
+      "mean_points": 4.32,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 38,
+      "tier": 10,
+      "name": "Luke Schoonmaker",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 38.0,
+      "rank_stdev": 0.0,
+      "best": 38.0,
+      "worst": 38.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 38.0
+      },
+      "mean_points": 4.3,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 39,
+      "tier": 10,
+      "name": "Adam Trautman",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 39.0,
+      "rank_stdev": 0.0,
+      "best": 39.0,
+      "worst": 39.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 39.0
+      },
+      "mean_points": 4.26,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 40,
+      "tier": 10,
+      "name": "Tyler Conklin",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 40.0,
+      "rank_stdev": 0.0,
+      "best": 40.0,
+      "worst": 40.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 40.0
+      },
+      "mean_points": 4.18,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 41,
+      "tier": 11,
+      "name": "Isaiah Likely",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 41.0,
+      "rank_stdev": 0.0,
+      "best": 41.0,
+      "worst": 41.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 41.0
+      },
+      "mean_points": 4.12,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 42,
+      "tier": 11,
+      "name": "Nick Vannett",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 42.0,
+      "rank_stdev": 0.0,
+      "best": 42.0,
+      "worst": 42.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 42.0
+      },
+      "mean_points": 3.98,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 43,
+      "tier": 11,
+      "name": "Brock Wright",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 43.0,
+      "rank_stdev": 0.0,
+      "best": 43.0,
+      "worst": 43.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 43.0
+      },
+      "mean_points": 3.72,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 44,
+      "tier": 11,
+      "name": "Austin Hooper",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 44.0,
+      "rank_stdev": 0.0,
+      "best": 44.0,
+      "worst": 44.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 44.0
+      },
+      "mean_points": 3.65,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 45,
+      "tier": 12,
+      "name": "Brenton Strange",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 45.0,
+      "rank_stdev": 0.0,
+      "best": 45.0,
+      "worst": 45.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 45.0
+      },
+      "mean_points": 3.65,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 46,
+      "tier": 12,
+      "name": "Drew Sample",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 46.0,
+      "rank_stdev": 0.0,
+      "best": 46.0,
+      "worst": 46.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 46.0
+      },
+      "mean_points": 3.47,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 47,
+      "tier": 12,
+      "name": "Davis Allen",
+      "team": "LAR",
+      "opponent": null,
+      "consensus_rank": 47.0,
+      "rank_stdev": 0.0,
+      "best": 47.0,
+      "worst": 47.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 47.0
+      },
+      "mean_points": 3.45,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 48,
+      "tier": 12,
+      "name": "Kenny Yeboah",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 48.0,
+      "rank_stdev": 0.0,
+      "best": 48.0,
+      "worst": 48.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 48.0
+      },
+      "mean_points": 3.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 49,
+      "tier": 13,
+      "name": "Chris Manhertz",
+      "team": "NYG",
+      "opponent": null,
+      "consensus_rank": 49.0,
+      "rank_stdev": 0.0,
+      "best": 49.0,
+      "worst": 49.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 49.0
+      },
+      "mean_points": 3.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 50,
+      "tier": 13,
+      "name": "Quintin Morris",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 50.0,
+      "rank_stdev": 0.0,
+      "best": 50.0,
+      "worst": 50.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 50.0
+      },
+      "mean_points": 3.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 51,
+      "tier": 13,
+      "name": "Darnell Washington",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 51.0,
+      "rank_stdev": 0.0,
+      "best": 51.0,
+      "worst": 51.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 51.0
+      },
+      "mean_points": 3.34,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 52,
+      "tier": 13,
+      "name": "Harrison Bryant",
+      "team": "LV",
+      "opponent": null,
+      "consensus_rank": 52.0,
+      "rank_stdev": 0.0,
+      "best": 52.0,
+      "worst": 52.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 52.0
+      },
+      "mean_points": 3.33,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 53,
+      "tier": 14,
+      "name": "Jordan Akins",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 53.0,
+      "rank_stdev": 0.0,
+      "best": 53.0,
+      "worst": 53.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 53.0
+      },
+      "mean_points": 3.33,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 54,
+      "tier": 14,
+      "name": "Chigoziem Okonkwo",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 54.0,
+      "rank_stdev": 0.0,
+      "best": 54.0,
+      "worst": 54.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 54.0
+      },
+      "mean_points": 3.27,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 55,
+      "tier": 14,
+      "name": "Brevyn Spann-Ford",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 55.0,
+      "rank_stdev": 0.0,
+      "best": 55.0,
+      "worst": 55.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 55.0
+      },
+      "mean_points": 3.1,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 56,
+      "tier": 14,
+      "name": "A.J. Barner",
+      "team": "SEA",
+      "opponent": null,
+      "consensus_rank": 56.0,
+      "rank_stdev": 0.0,
+      "best": 56.0,
+      "worst": 56.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 56.0
+      },
+      "mean_points": 2.88,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 57,
+      "tier": 15,
+      "name": "Lucas Krull",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 57.0,
+      "rank_stdev": 0.0,
+      "best": 57.0,
+      "worst": 57.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 57.0
+      },
+      "mean_points": 2.72,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 58,
+      "tier": 15,
+      "name": "John Bates",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 58.0,
+      "rank_stdev": 0.0,
+      "best": 58.0,
+      "worst": 58.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 58.0
+      },
+      "mean_points": 2.6,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 59,
+      "tier": 15,
+      "name": "Stone Smartt",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 59.0,
+      "rank_stdev": 0.0,
+      "best": 59.0,
+      "worst": 59.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 59.0
+      },
+      "mean_points": 2.55,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 60,
+      "tier": 15,
+      "name": "Elijah Higgins",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 60.0,
+      "rank_stdev": 0.0,
+      "best": 60.0,
+      "worst": 60.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 60.0
+      },
+      "mean_points": 2.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 61,
+      "tier": 16,
+      "name": "Erick All",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 61.0,
+      "rank_stdev": 0.0,
+      "best": 61.0,
+      "worst": 61.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 61.0
+      },
+      "mean_points": 2.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 62,
+      "tier": 16,
+      "name": "Mo Alie-Cox",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 62.0,
+      "rank_stdev": 0.0,
+      "best": 62.0,
+      "worst": 62.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 62.0
+      },
+      "mean_points": 2.2,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 63,
+      "tier": 16,
+      "name": "Josh Whyle",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 63.0,
+      "rank_stdev": 0.0,
+      "best": 63.0,
+      "worst": 63.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 63.0
+      },
+      "mean_points": 2.12,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 64,
+      "tier": 16,
+      "name": "Jeremy Ruckert",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 64.0,
+      "rank_stdev": 0.0,
+      "best": 64.0,
+      "worst": 64.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 64.0
+      },
+      "mean_points": 1.86,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 65,
+      "tier": 17,
+      "name": "Ben Sims",
+      "team": "GB",
+      "opponent": null,
+      "consensus_rank": 65.0,
+      "rank_stdev": 0.0,
+      "best": 65.0,
+      "worst": 65.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 65.0
+      },
+      "mean_points": 1.83,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 66,
+      "tier": 17,
+      "name": "Julian Hill",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 66.0,
+      "rank_stdev": 0.0,
+      "best": 66.0,
+      "worst": 66.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 66.0
+      },
+      "mean_points": 1.82,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 67,
+      "tier": 17,
+      "name": "Johnny Mundt",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 67.0,
+      "rank_stdev": 0.0,
+      "best": 67.0,
+      "worst": 67.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 67.0
+      },
+      "mean_points": 1.52,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 68,
+      "tier": 17,
+      "name": "Luke Farrell",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 68.0,
+      "rank_stdev": 0.0,
+      "best": 68.0,
+      "worst": 68.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 68.0
+      },
+      "mean_points": 1.47,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 69,
+      "tier": 18,
+      "name": "Charlie Kolar",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 69.0,
+      "rank_stdev": 0.0,
+      "best": 69.0,
+      "worst": 69.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 69.0
+      },
+      "mean_points": 1.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 70,
+      "tier": 18,
+      "name": "Hunter Long",
+      "team": "LAR",
+      "opponent": null,
+      "consensus_rank": 70.0,
+      "rank_stdev": 0.0,
+      "best": 70.0,
+      "worst": 70.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 70.0
+      },
+      "mean_points": 1.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 71,
+      "tier": 18,
+      "name": "Peyton Hendershot",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 71.0,
+      "rank_stdev": 0.0,
+      "best": 71.0,
+      "worst": 71.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 71.0
+      },
+      "mean_points": 1.37,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 72,
+      "tier": 18,
+      "name": "Andrew Ogletree",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 72.0,
+      "rank_stdev": 0.0,
+      "best": 72.0,
+      "worst": 72.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 72.0
+      },
+      "mean_points": 1.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 73,
+      "tier": 19,
+      "name": "Cade Stover",
+      "team": "HOU",
+      "opponent": null,
+      "consensus_rank": 73.0,
+      "rank_stdev": 0.0,
+      "best": 73.0,
+      "worst": 73.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 73.0
+      },
+      "mean_points": 1.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 74,
+      "tier": 19,
+      "name": "Kylen Granson",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 74.0,
+      "rank_stdev": 0.0,
+      "best": 74.0,
+      "worst": 74.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 74.0
+      },
+      "mean_points": 1.17,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 75,
+      "tier": 19,
+      "name": "Durham Smythe",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 75.0,
+      "rank_stdev": 0.0,
+      "best": 75.0,
+      "worst": 75.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 75.0
+      },
+      "mean_points": 0.93,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 76,
+      "tier": 19,
+      "name": "Charlie Woerner",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 76.0,
+      "rank_stdev": 0.0,
+      "best": 76.0,
+      "worst": 76.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 76.0
+      },
+      "mean_points": 0.9,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 77,
+      "tier": 20,
+      "name": "MyCole Pruitt",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 77.0,
+      "rank_stdev": 0.0,
+      "best": 77.0,
+      "worst": 77.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 77.0
+      },
+      "mean_points": 0.75,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 78,
+      "tier": 20,
+      "name": "Ian Thomas",
+      "team": "CAR",
+      "opponent": null,
+      "consensus_rank": 78.0,
+      "rank_stdev": 0.0,
+      "best": 78.0,
+      "worst": 78.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 78.0
+      },
+      "mean_points": 0.73,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 79,
+      "tier": 20,
+      "name": "Eric Tomlinson",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 79.0,
+      "rank_stdev": 0.0,
+      "best": 79.0,
+      "worst": 79.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 79.0
+      },
+      "mean_points": 0.63,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 80,
+      "tier": 20,
+      "name": "Will Mallory",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 80.0,
+      "rank_stdev": 0.0,
+      "best": 80.0,
+      "worst": 80.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 80.0
+      },
+      "mean_points": 0.62,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 81,
+      "tier": 21,
+      "name": "Gerald Everett",
+      "team": "CHI",
+      "opponent": null,
+      "consensus_rank": 81.0,
+      "rank_stdev": 0.0,
+      "best": 81.0,
+      "worst": 81.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 81.0
+      },
+      "mean_points": 0.6,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 82,
+      "tier": 21,
+      "name": "Hayden Hurst",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 82.0,
+      "rank_stdev": 0.0,
+      "best": 82.0,
+      "worst": 82.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 82.0
+      },
+      "mean_points": 0.55,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 83,
+      "tier": 21,
+      "name": "Jaheim Bell",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 83.0,
+      "rank_stdev": 0.0,
+      "best": 83.0,
+      "worst": 83.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 83.0
+      },
+      "mean_points": 0.3,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "TE",
+      "rank": 84,
+      "tier": 21,
+      "name": "Joseph Fortson",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 84.0,
+      "rank_stdev": 0.0,
+      "best": 84.0,
+      "worst": 84.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 84.0
+      },
+      "mean_points": 0.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 1,
+      "tier": 1,
+      "name": "Ja'Marr Chase",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 1.0,
+      "rank_stdev": 0.0,
+      "best": 1.0,
+      "worst": 1.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 1.0
+      },
+      "mean_points": 20.23,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 2,
+      "tier": 1,
+      "name": "Chris Godwin",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 2.0,
+      "rank_stdev": 0.0,
+      "best": 2.0,
+      "worst": 2.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 2.0
+      },
+      "mean_points": 20.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 3,
+      "tier": 1,
+      "name": "Tee Higgins",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 3.0,
+      "rank_stdev": 0.0,
+      "best": 3.0,
+      "worst": 3.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 3.0
+      },
+      "mean_points": 17.57,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 4,
+      "tier": 1,
+      "name": "Amon-Ra St. Brown",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 4.0,
+      "rank_stdev": 0.0,
+      "best": 4.0,
+      "worst": 4.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 4.0
+      },
+      "mean_points": 17.32,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 5,
+      "tier": 2,
+      "name": "Cooper Kupp",
+      "team": "LAR",
+      "opponent": null,
+      "consensus_rank": 5.0,
+      "rank_stdev": 0.0,
+      "best": 5.0,
+      "worst": 5.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 5.0
+      },
+      "mean_points": 16.65,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 6,
+      "tier": 2,
+      "name": "CeeDee Lamb",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 6.0,
+      "rank_stdev": 0.0,
+      "best": 6.0,
+      "worst": 6.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 6.0
+      },
+      "mean_points": 15.58,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 7,
+      "tier": 2,
+      "name": "Courtland Sutton",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 7.0,
+      "rank_stdev": 0.0,
+      "best": 7.0,
+      "worst": 7.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 7.0
+      },
+      "mean_points": 14.7,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 8,
+      "tier": 2,
+      "name": "Jaxon Smith-Njigba",
+      "team": "SEA",
+      "opponent": null,
+      "consensus_rank": 8.0,
+      "rank_stdev": 0.0,
+      "best": 8.0,
+      "worst": 8.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 8.0
+      },
+      "mean_points": 14.36,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 9,
+      "tier": 3,
+      "name": "Allen Lazard",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 9.0,
+      "rank_stdev": 0.0,
+      "best": 9.0,
+      "worst": 9.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 9.0
+      },
+      "mean_points": 14.1,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 10,
+      "tier": 3,
+      "name": "Justin Jefferson",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 10.0,
+      "rank_stdev": 0.0,
+      "best": 10.0,
+      "worst": 10.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 10.0
+      },
+      "mean_points": 13.98,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 11,
+      "tier": 3,
+      "name": "Marquez Valdes-Scantling",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 11.0,
+      "rank_stdev": 0.0,
+      "best": 11.0,
+      "worst": 11.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 11.0
+      },
+      "mean_points": 13.7,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 12,
+      "tier": 3,
+      "name": "Garrett Wilson",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 12.0,
+      "rank_stdev": 0.0,
+      "best": 12.0,
+      "worst": 12.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 12.0
+      },
+      "mean_points": 13.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 13,
+      "tier": 4,
+      "name": "George Pickens",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 13.0,
+      "rank_stdev": 0.0,
+      "best": 13.0,
+      "worst": 13.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 13.0
+      },
+      "mean_points": 13.34,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 14,
+      "tier": 4,
+      "name": "Zay Flowers",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 14.0,
+      "rank_stdev": 0.0,
+      "best": 14.0,
+      "worst": 14.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 14.0
+      },
+      "mean_points": 13.32,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 15,
+      "tier": 4,
+      "name": "Puka Nacua",
+      "team": "LAR",
+      "opponent": null,
+      "consensus_rank": 15.0,
+      "rank_stdev": 0.0,
+      "best": 15.0,
+      "worst": 15.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 15.0
+      },
+      "mean_points": 13.07,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 16,
+      "tier": 4,
+      "name": "Terry McLaurin",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 16.0,
+      "rank_stdev": 0.0,
+      "best": 16.0,
+      "worst": 16.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 16.0
+      },
+      "mean_points": 13.05,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 17,
+      "tier": 5,
+      "name": "A.J. Brown",
+      "team": "PHI",
+      "opponent": null,
+      "consensus_rank": 17.0,
+      "rank_stdev": 0.0,
+      "best": 17.0,
+      "worst": 17.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 17.0
+      },
+      "mean_points": 12.65,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 18,
+      "tier": 5,
+      "name": "Jauan Jennings",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 18.0,
+      "rank_stdev": 0.0,
+      "best": 18.0,
+      "worst": 18.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 18.0
+      },
+      "mean_points": 12.37,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 19,
+      "tier": 5,
+      "name": "Cedric Tillman",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 19.0,
+      "rank_stdev": 0.0,
+      "best": 19.0,
+      "worst": 19.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 19.0
+      },
+      "mean_points": 12.34,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 20,
+      "tier": 5,
+      "name": "Josh Downs",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 20.0,
+      "rank_stdev": 0.0,
+      "best": 20.0,
+      "worst": 20.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 20.0
+      },
+      "mean_points": 12.05,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 21,
+      "tier": 6,
+      "name": "Jakobi Meyers",
+      "team": "LV",
+      "opponent": null,
+      "consensus_rank": 21.0,
+      "rank_stdev": 0.0,
+      "best": 21.0,
+      "worst": 21.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 21.0
+      },
+      "mean_points": 11.83,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 22,
+      "tier": 6,
+      "name": "Ladd McConkey",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 22.0,
+      "rank_stdev": 0.0,
+      "best": 22.0,
+      "worst": 22.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 22.0
+      },
+      "mean_points": 11.65,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 23,
+      "tier": 6,
+      "name": "DK Metcalf",
+      "team": "SEA",
+      "opponent": null,
+      "consensus_rank": 23.0,
+      "rank_stdev": 0.0,
+      "best": 23.0,
+      "worst": 23.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 23.0
+      },
+      "mean_points": 11.57,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 24,
+      "tier": 6,
+      "name": "Drake London",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 24.0,
+      "rank_stdev": 0.0,
+      "best": 24.0,
+      "worst": 24.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 24.0
+      },
+      "mean_points": 11.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 25,
+      "tier": 7,
+      "name": "Quentin Johnston",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 25.0,
+      "rank_stdev": 0.0,
+      "best": 25.0,
+      "worst": 25.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 25.0
+      },
+      "mean_points": 11.23,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 26,
+      "tier": 7,
+      "name": "Deebo Samuel",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 26.0,
+      "rank_stdev": 0.0,
+      "best": 26.0,
+      "worst": 26.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 26.0
+      },
+      "mean_points": 11.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 27,
+      "tier": 7,
+      "name": "Jameson Williams",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 27.0,
+      "rank_stdev": 0.0,
+      "best": 27.0,
+      "worst": 27.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 27.0
+      },
+      "mean_points": 10.93,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 28,
+      "tier": 7,
+      "name": "Calvin Ridley",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 28.0,
+      "rank_stdev": 0.0,
+      "best": 28.0,
+      "worst": 28.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 28.0
+      },
+      "mean_points": 10.78,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 29,
+      "tier": 8,
+      "name": "Stefon Diggs",
+      "team": "HOU",
+      "opponent": null,
+      "consensus_rank": 29.0,
+      "rank_stdev": 0.0,
+      "best": 29.0,
+      "worst": 29.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 29.0
+      },
+      "mean_points": 10.57,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 30,
+      "tier": 8,
+      "name": "Nick Westbrook-Ikhine",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 30.0,
+      "rank_stdev": 0.0,
+      "best": 30.0,
+      "worst": 30.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 30.0
+      },
+      "mean_points": 10.52,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 31,
+      "tier": 8,
+      "name": "Darnell Mooney",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 31.0,
+      "rank_stdev": 0.0,
+      "best": 31.0,
+      "worst": 31.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 31.0
+      },
+      "mean_points": 10.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 32,
+      "tier": 8,
+      "name": "Tylan Wallace",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 32.0,
+      "rank_stdev": 0.0,
+      "best": 32.0,
+      "worst": 32.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 32.0
+      },
+      "mean_points": 10.15,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 33,
+      "tier": 9,
+      "name": "Jerry Jeudy",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 33.0,
+      "rank_stdev": 0.0,
+      "best": 33.0,
+      "worst": 33.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 33.0
+      },
+      "mean_points": 10.14,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 34,
+      "tier": 9,
+      "name": "Keon Coleman",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 34.0,
+      "rank_stdev": 0.0,
+      "best": 34.0,
+      "worst": 34.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 34.0
+      },
+      "mean_points": 9.68,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 35,
+      "tier": 9,
+      "name": "Demarcus Robinson",
+      "team": "LAR",
+      "opponent": null,
+      "consensus_rank": 35.0,
+      "rank_stdev": 0.0,
+      "best": 35.0,
+      "worst": 35.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 35.0
+      },
+      "mean_points": 9.6,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 36,
+      "tier": 9,
+      "name": "Tyreek Hill",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 36.0,
+      "rank_stdev": 0.0,
+      "best": 36.0,
+      "worst": 36.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 36.0
+      },
+      "mean_points": 9.56,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 37,
+      "tier": 10,
+      "name": "Romeo Doubs",
+      "team": "GB",
+      "opponent": null,
+      "consensus_rank": 37.0,
+      "rank_stdev": 0.0,
+      "best": 37.0,
+      "worst": 37.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 37.0
+      },
+      "mean_points": 9.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 38,
+      "tier": 10,
+      "name": "Davante Adams",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 38.0,
+      "rank_stdev": 0.0,
+      "best": 38.0,
+      "worst": 38.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 38.0
+      },
+      "mean_points": 9.36,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 39,
+      "tier": 10,
+      "name": "Khalil Shakir",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 39.0,
+      "rank_stdev": 0.0,
+      "best": 39.0,
+      "worst": 39.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 39.0
+      },
+      "mean_points": 9.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 40,
+      "tier": 10,
+      "name": "Tank Dell",
+      "team": "HOU",
+      "opponent": null,
+      "consensus_rank": 40.0,
+      "rank_stdev": 0.0,
+      "best": 40.0,
+      "worst": 40.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 40.0
+      },
+      "mean_points": 9.32,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 41,
+      "tier": 11,
+      "name": "Brian Thomas",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 41.0,
+      "rank_stdev": 0.0,
+      "best": 41.0,
+      "worst": 41.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 41.0
+      },
+      "mean_points": 9.3,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 42,
+      "tier": 11,
+      "name": "DeVonta Smith",
+      "team": "PHI",
+      "opponent": null,
+      "consensus_rank": 42.0,
+      "rank_stdev": 0.0,
+      "best": 42.0,
+      "worst": 42.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 42.0
+      },
+      "mean_points": 9.28,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 43,
+      "tier": 11,
+      "name": "Rashod Bateman",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 43.0,
+      "rank_stdev": 0.0,
+      "best": 43.0,
+      "worst": 43.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 43.0
+      },
+      "mean_points": 9.15,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 44,
+      "tier": 11,
+      "name": "Christian Watson",
+      "team": "GB",
+      "opponent": null,
+      "consensus_rank": 44.0,
+      "rank_stdev": 0.0,
+      "best": 44.0,
+      "worst": 44.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 44.0
+      },
+      "mean_points": 9.08,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 45,
+      "tier": 12,
+      "name": "Malik Nabers",
+      "team": "NYG",
+      "opponent": null,
+      "consensus_rank": 45.0,
+      "rank_stdev": 0.0,
+      "best": 45.0,
+      "worst": 45.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 45.0
+      },
+      "mean_points": 8.72,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 46,
+      "tier": 12,
+      "name": "Jayden Reed",
+      "team": "GB",
+      "opponent": null,
+      "consensus_rank": 46.0,
+      "rank_stdev": 0.0,
+      "best": 46.0,
+      "worst": 46.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 46.0
+      },
+      "mean_points": 8.58,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 47,
+      "tier": 12,
+      "name": "Jordan Addison",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 47.0,
+      "rank_stdev": 0.0,
+      "best": 47.0,
+      "worst": 47.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 47.0
+      },
+      "mean_points": 8.48,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 48,
+      "tier": 12,
+      "name": "Keenan Allen",
+      "team": "CHI",
+      "opponent": null,
+      "consensus_rank": 48.0,
+      "rank_stdev": 0.0,
+      "best": 48.0,
+      "worst": 48.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 48.0
+      },
+      "mean_points": 8.42,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 49,
+      "tier": 13,
+      "name": "Xavier Legette",
+      "team": "CAR",
+      "opponent": null,
+      "consensus_rank": 49.0,
+      "rank_stdev": 0.0,
+      "best": 49.0,
+      "worst": 49.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 49.0
+      },
+      "mean_points": 8.1,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 50,
+      "tier": 13,
+      "name": "Elijah Moore",
+      "team": "CLE",
+      "opponent": null,
+      "consensus_rank": 50.0,
+      "rank_stdev": 0.0,
+      "best": 50.0,
+      "worst": 50.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 50.0
+      },
+      "mean_points": 8.06,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 51,
+      "tier": 13,
+      "name": "DeAndre Hopkins",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 51.0,
+      "rank_stdev": 0.0,
+      "best": 51.0,
+      "worst": 51.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 51.0
+      },
+      "mean_points": 8.03,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 52,
+      "tier": 13,
+      "name": "Marvin Harrison",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 52.0,
+      "rank_stdev": 0.0,
+      "best": 52.0,
+      "worst": 52.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 52.0
+      },
+      "mean_points": 8.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 53,
+      "tier": 14,
+      "name": "Kalif Raymond",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 53.0,
+      "rank_stdev": 0.0,
+      "best": 53.0,
+      "worst": 53.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 53.0
+      },
+      "mean_points": 7.92,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 54,
+      "tier": 14,
+      "name": "Tyler Lockett",
+      "team": "SEA",
+      "opponent": null,
+      "consensus_rank": 54.0,
+      "rank_stdev": 0.0,
+      "best": 54.0,
+      "worst": 54.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 54.0
+      },
+      "mean_points": 7.82,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 55,
+      "tier": 14,
+      "name": "Darius Slayton",
+      "team": "NYG",
+      "opponent": null,
+      "consensus_rank": 55.0,
+      "rank_stdev": 0.0,
+      "best": 55.0,
+      "worst": 55.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 55.0
+      },
+      "mean_points": 7.65,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 56,
+      "tier": 14,
+      "name": "Cedrick Wilson",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 56.0,
+      "rank_stdev": 0.0,
+      "best": 56.0,
+      "worst": 56.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 56.0
+      },
+      "mean_points": 7.63,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 57,
+      "tier": 15,
+      "name": "Rome Odunze",
+      "team": "CHI",
+      "opponent": null,
+      "consensus_rank": 57.0,
+      "rank_stdev": 0.0,
+      "best": 57.0,
+      "worst": 57.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 57.0
+      },
+      "mean_points": 7.62,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 58,
+      "tier": 15,
+      "name": "Demario Douglas",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 58.0,
+      "rank_stdev": 0.0,
+      "best": 58.0,
+      "worst": 58.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 58.0
+      },
+      "mean_points": 7.45,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 59,
+      "tier": 15,
+      "name": "Bub Means",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 59.0,
+      "rank_stdev": 0.0,
+      "best": 59.0,
+      "worst": 59.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 59.0
+      },
+      "mean_points": 7.43,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 60,
+      "tier": 15,
+      "name": "Ricky Pearsall",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 60.0,
+      "rank_stdev": 0.0,
+      "best": 60.0,
+      "worst": 60.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 60.0
+      },
+      "mean_points": 7.15,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 61,
+      "tier": 16,
+      "name": "Amari Cooper",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 61.0,
+      "rank_stdev": 0.0,
+      "best": 61.0,
+      "worst": 61.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 61.0
+      },
+      "mean_points": 7.03,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 62,
+      "tier": 16,
+      "name": "Josh Palmer",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 62.0,
+      "rank_stdev": 0.0,
+      "best": 62.0,
+      "worst": 62.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 62.0
+      },
+      "mean_points": 7.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 63,
+      "tier": 16,
+      "name": "Kavontae Turpin",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 63.0,
+      "rank_stdev": 0.0,
+      "best": 63.0,
+      "worst": 63.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 63.0
+      },
+      "mean_points": 6.85,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 64,
+      "tier": 16,
+      "name": "Mike Evans",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 64.0,
+      "rank_stdev": 0.0,
+      "best": 64.0,
+      "worst": 64.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 64.0
+      },
+      "mean_points": 6.7,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 65,
+      "tier": 17,
+      "name": "Mack Hollins",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 65.0,
+      "rank_stdev": 0.0,
+      "best": 65.0,
+      "worst": 65.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 65.0
+      },
+      "mean_points": 6.62,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 66,
+      "tier": 17,
+      "name": "Devaughn Vele",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 66.0,
+      "rank_stdev": 0.0,
+      "best": 66.0,
+      "worst": 66.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 66.0
+      },
+      "mean_points": 6.53,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 67,
+      "tier": 17,
+      "name": "Noah Brown",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 67.0,
+      "rank_stdev": 0.0,
+      "best": 67.0,
+      "worst": 67.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 67.0
+      },
+      "mean_points": 6.48,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 68,
+      "tier": 17,
+      "name": "Jalen Coker",
+      "team": "CAR",
+      "opponent": null,
+      "consensus_rank": 68.0,
+      "rank_stdev": 0.0,
+      "best": 68.0,
+      "worst": 68.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 68.0
+      },
+      "mean_points": 6.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 69,
+      "tier": 18,
+      "name": "Kayshon Boutte",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 69.0,
+      "rank_stdev": 0.0,
+      "best": 69.0,
+      "worst": 69.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 69.0
+      },
+      "mean_points": 6.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 70,
+      "tier": 18,
+      "name": "John Metchie",
+      "team": "HOU",
+      "opponent": null,
+      "consensus_rank": 70.0,
+      "rank_stdev": 0.0,
+      "best": 70.0,
+      "worst": 70.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 70.0
+      },
+      "mean_points": 6.28,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 71,
+      "tier": 18,
+      "name": "Calvin Austin",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 71.0,
+      "rank_stdev": 0.0,
+      "best": 71.0,
+      "worst": 71.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 71.0
+      },
+      "mean_points": 6.2,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 72,
+      "tier": 18,
+      "name": "Xavier Worthy",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 72.0,
+      "rank_stdev": 0.0,
+      "best": 72.0,
+      "worst": 72.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 72.0
+      },
+      "mean_points": 6.2,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 73,
+      "tier": 19,
+      "name": "Gabe Davis",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 73.0,
+      "rank_stdev": 0.0,
+      "best": 73.0,
+      "worst": 73.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 73.0
+      },
+      "mean_points": 6.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 74,
+      "tier": 19,
+      "name": "Michael Pittman",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 74.0,
+      "rank_stdev": 0.0,
+      "best": 74.0,
+      "worst": 74.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 74.0
+      },
+      "mean_points": 5.98,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 75,
+      "tier": 19,
+      "name": "Alec Pierce",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 75.0,
+      "rank_stdev": 0.0,
+      "best": 75.0,
+      "worst": 75.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 75.0
+      },
+      "mean_points": 5.78,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 76,
+      "tier": 19,
+      "name": "D.J. Turner",
+      "team": "LV",
+      "opponent": null,
+      "consensus_rank": 76.0,
+      "rank_stdev": 0.0,
+      "best": 76.0,
+      "worst": 76.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 76.0
+      },
+      "mean_points": 5.75,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 77,
+      "tier": 20,
+      "name": "Wan'Dale Robinson",
+      "team": "NYG",
+      "opponent": null,
+      "consensus_rank": 77.0,
+      "rank_stdev": 0.0,
+      "best": 77.0,
+      "worst": 77.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 77.0
+      },
+      "mean_points": 5.68,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 78,
+      "tier": 20,
+      "name": "D.J. Moore",
+      "team": "CHI",
+      "opponent": null,
+      "consensus_rank": 78.0,
+      "rank_stdev": 0.0,
+      "best": 78.0,
+      "worst": 78.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 78.0
+      },
+      "mean_points": 5.62,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 79,
+      "tier": 20,
+      "name": "Jalen Tolbert",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 79.0,
+      "rank_stdev": 0.0,
+      "best": 79.0,
+      "worst": 79.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 79.0
+      },
+      "mean_points": 5.52,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 80,
+      "tier": 20,
+      "name": "Ray-Ray McCloud",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 80.0,
+      "rank_stdev": 0.0,
+      "best": 80.0,
+      "worst": 80.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 80.0
+      },
+      "mean_points": 5.42,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 81,
+      "tier": 21,
+      "name": "Michael Wilson",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 81.0,
+      "rank_stdev": 0.0,
+      "best": 81.0,
+      "worst": 81.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 81.0
+      },
+      "mean_points": 5.32,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 82,
+      "tier": 21,
+      "name": "Jaylen Waddle",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 82.0,
+      "rank_stdev": 0.0,
+      "best": 82.0,
+      "worst": 82.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 82.0
+      },
+      "mean_points": 5.3,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 83,
+      "tier": 21,
+      "name": "Troy Franklin",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 83.0,
+      "rank_stdev": 0.0,
+      "best": 83.0,
+      "worst": 83.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 83.0
+      },
+      "mean_points": 5.3,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 84,
+      "tier": 21,
+      "name": "Chris Olave",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 84.0,
+      "rank_stdev": 0.0,
+      "best": 84.0,
+      "worst": 84.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 84.0
+      },
+      "mean_points": 5.17,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 85,
+      "tier": 22,
+      "name": "Curtis Samuel",
+      "team": "BUF",
+      "opponent": null,
+      "consensus_rank": 85.0,
+      "rank_stdev": 0.0,
+      "best": 85.0,
+      "worst": 85.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 85.0
+      },
+      "mean_points": 5.14,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 86,
+      "tier": 22,
+      "name": "Kendrick Bourne",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 86.0,
+      "rank_stdev": 0.0,
+      "best": 86.0,
+      "worst": 86.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 86.0
+      },
+      "mean_points": 5.08,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 87,
+      "tier": 22,
+      "name": "Christian Kirk",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 87.0,
+      "rank_stdev": 0.0,
+      "best": 87.0,
+      "worst": 87.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 87.0
+      },
+      "mean_points": 5.07,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 88,
+      "tier": 22,
+      "name": "Diontae Johnson",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 88.0,
+      "rank_stdev": 0.0,
+      "best": 88.0,
+      "worst": 88.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 88.0
+      },
+      "mean_points": 5.03,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 89,
+      "tier": 23,
+      "name": "Sterling Shepard",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 89.0,
+      "rank_stdev": 0.0,
+      "best": 89.0,
+      "worst": 89.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 89.0
+      },
+      "mean_points": 4.92,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 90,
+      "tier": 23,
+      "name": "Parker Washington",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 90.0,
+      "rank_stdev": 0.0,
+      "best": 90.0,
+      "worst": 90.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 90.0
+      },
+      "mean_points": 4.8,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 91,
+      "tier": 23,
+      "name": "Tyler Johnson",
+      "team": "LAR",
+      "opponent": null,
+      "consensus_rank": 91.0,
+      "rank_stdev": 0.0,
+      "best": 91.0,
+      "worst": 91.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 91.0
+      },
+      "mean_points": 4.53,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 92,
+      "tier": 23,
+      "name": "Nelson Agholor",
+      "team": "BAL",
+      "opponent": null,
+      "consensus_rank": 92.0,
+      "rank_stdev": 0.0,
+      "best": 92.0,
+      "worst": 92.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 92.0
+      },
+      "mean_points": 4.52,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 93,
+      "tier": 24,
+      "name": "Van Jefferson",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 93.0,
+      "rank_stdev": 0.0,
+      "best": 93.0,
+      "worst": 93.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 93.0
+      },
+      "mean_points": 4.17,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 94,
+      "tier": 24,
+      "name": "Mecole Hardman",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 94.0,
+      "rank_stdev": 0.0,
+      "best": 94.0,
+      "worst": 94.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 94.0
+      },
+      "mean_points": 4.08,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 95,
+      "tier": 24,
+      "name": "Jalen Nailor",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 95.0,
+      "rank_stdev": 0.0,
+      "best": 95.0,
+      "worst": 95.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 95.0
+      },
+      "mean_points": 4.06,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 96,
+      "tier": 24,
+      "name": "Lil'Jordan Humphrey",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 96.0,
+      "rank_stdev": 0.0,
+      "best": 96.0,
+      "worst": 96.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 96.0
+      },
+      "mean_points": 4.05,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 97,
+      "tier": 25,
+      "name": "Malik Washington",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 97.0,
+      "rank_stdev": 0.0,
+      "best": 97.0,
+      "worst": 97.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 97.0
+      },
+      "mean_points": 4.03,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 98,
+      "tier": 25,
+      "name": "Adonai Mitchell",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 98.0,
+      "rank_stdev": 0.0,
+      "best": 98.0,
+      "worst": 98.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 98.0
+      },
+      "mean_points": 4.02,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 99,
+      "tier": 25,
+      "name": "Brandon Aiyuk",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 99.0,
+      "rank_stdev": 0.0,
+      "best": 99.0,
+      "worst": 99.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 99.0
+      },
+      "mean_points": 4.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 100,
+      "tier": 25,
+      "name": "Ryan Miller",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 100.0,
+      "rank_stdev": 0.0,
+      "best": 100.0,
+      "worst": 100.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 100.0
+      },
+      "mean_points": 4.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 101,
+      "tier": 26,
+      "name": "Jalen McMillan",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 101.0,
+      "rank_stdev": 0.0,
+      "best": 101.0,
+      "worst": 101.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 101.0
+      },
+      "mean_points": 3.77,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 102,
+      "tier": 26,
+      "name": "Laviska Shenault Jr.",
+      "team": "SEA",
+      "opponent": null,
+      "consensus_rank": 102.0,
+      "rank_stdev": 0.0,
+      "best": 102.0,
+      "worst": 102.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 102.0
+      },
+      "mean_points": 3.75,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 103,
+      "tier": 26,
+      "name": "Marvin Mims",
+      "team": "DEN",
+      "opponent": null,
+      "consensus_rank": 103.0,
+      "rank_stdev": 0.0,
+      "best": 103.0,
+      "worst": 103.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 103.0
+      },
+      "mean_points": 3.72,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 104,
+      "tier": 26,
+      "name": "Andrei Iosivas",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 104.0,
+      "rank_stdev": 0.0,
+      "best": 104.0,
+      "worst": 104.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 104.0
+      },
+      "mean_points": 3.68,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 105,
+      "tier": 27,
+      "name": "Tim Patrick",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 105.0,
+      "rank_stdev": 0.0,
+      "best": 105.0,
+      "worst": 105.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 105.0
+      },
+      "mean_points": 3.62,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 106,
+      "tier": 27,
+      "name": "David Moore",
+      "team": "CAR",
+      "opponent": null,
+      "consensus_rank": 106.0,
+      "rank_stdev": 0.0,
+      "best": 106.0,
+      "worst": 106.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 106.0
+      },
+      "mean_points": 3.6,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 107,
+      "tier": 27,
+      "name": "Rakim Jarrett",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 107.0,
+      "rank_stdev": 0.0,
+      "best": 107.0,
+      "worst": 107.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 107.0
+      },
+      "mean_points": 3.57,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 108,
+      "tier": 27,
+      "name": "Olamide Zaccheaus",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 108.0,
+      "rank_stdev": 0.0,
+      "best": 108.0,
+      "worst": 108.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 108.0
+      },
+      "mean_points": 3.56,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 109,
+      "tier": 28,
+      "name": "Tyler Boyd",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 109.0,
+      "rank_stdev": 0.0,
+      "best": 109.0,
+      "worst": 109.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 109.0
+      },
+      "mean_points": 3.56,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 110,
+      "tier": 28,
+      "name": "Bryce Oliver",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 110.0,
+      "rank_stdev": 0.0,
+      "best": 110.0,
+      "worst": 110.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 110.0
+      },
+      "mean_points": 3.55,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 111,
+      "tier": 28,
+      "name": "Kevin Austin",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 111.0,
+      "rank_stdev": 0.0,
+      "best": 111.0,
+      "worst": 111.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 111.0
+      },
+      "mean_points": 3.45,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 112,
+      "tier": 28,
+      "name": "Justin Watson",
+      "team": "KC",
+      "opponent": null,
+      "consensus_rank": 112.0,
+      "rank_stdev": 0.0,
+      "best": 112.0,
+      "worst": 112.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 112.0
+      },
+      "mean_points": 3.42,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 113,
+      "tier": 29,
+      "name": "Tre Tucker",
+      "team": "LV",
+      "opponent": null,
+      "consensus_rank": 113.0,
+      "rank_stdev": 0.0,
+      "best": 113.0,
+      "worst": 113.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 113.0
+      },
+      "mean_points": 3.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 114,
+      "tier": 29,
+      "name": "Tutu Atwell",
+      "team": "LAR",
+      "opponent": null,
+      "consensus_rank": 114.0,
+      "rank_stdev": 0.0,
+      "best": 114.0,
+      "worst": 114.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 114.0
+      },
+      "mean_points": 3.24,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 115,
+      "tier": 29,
+      "name": "K.J. Osborn",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 115.0,
+      "rank_stdev": 0.0,
+      "best": 115.0,
+      "worst": 115.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 115.0
+      },
+      "mean_points": 3.2,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 116,
+      "tier": 29,
+      "name": "Mike Williams",
+      "team": "PIT",
+      "opponent": null,
+      "consensus_rank": 116.0,
+      "rank_stdev": 0.0,
+      "best": 116.0,
+      "worst": 116.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 116.0
+      },
+      "mean_points": 3.2,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 117,
+      "tier": 30,
+      "name": "Dontayvion Wicks",
+      "team": "GB",
+      "opponent": null,
+      "consensus_rank": 117.0,
+      "rank_stdev": 0.0,
+      "best": 117.0,
+      "worst": 117.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 117.0
+      },
+      "mean_points": 3.16,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 118,
+      "tier": 30,
+      "name": "Trent Sherfield",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 118.0,
+      "rank_stdev": 0.0,
+      "best": 118.0,
+      "worst": 118.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 118.0
+      },
+      "mean_points": 3.1,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 119,
+      "tier": 30,
+      "name": "Mason Tipton",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 119.0,
+      "rank_stdev": 0.0,
+      "best": 119.0,
+      "worst": 119.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 119.0
+      },
+      "mean_points": 2.98,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 120,
+      "tier": 30,
+      "name": "Xavier Gipson",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 120.0,
+      "rank_stdev": 0.0,
+      "best": 120.0,
+      "worst": 120.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 120.0
+      },
+      "mean_points": 2.93,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 121,
+      "tier": 31,
+      "name": "Simi Fehoko",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 121.0,
+      "rank_stdev": 0.0,
+      "best": 121.0,
+      "worst": 121.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 121.0
+      },
+      "mean_points": 2.85,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 122,
+      "tier": 31,
+      "name": "Robert Woods",
+      "team": "HOU",
+      "opponent": null,
+      "consensus_rank": 122.0,
+      "rank_stdev": 0.0,
+      "best": 122.0,
+      "worst": 122.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 122.0
+      },
+      "mean_points": 2.77,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 123,
+      "tier": 31,
+      "name": "Derius Davis",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 123.0,
+      "rank_stdev": 0.0,
+      "best": 123.0,
+      "worst": 123.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 123.0
+      },
+      "mean_points": 2.67,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 124,
+      "tier": 31,
+      "name": "Trey Palmer",
+      "team": "TB",
+      "opponent": null,
+      "consensus_rank": 124.0,
+      "rank_stdev": 0.0,
+      "best": 124.0,
+      "worst": 124.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 124.0
+      },
+      "mean_points": 2.58,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 125,
+      "tier": 32,
+      "name": "Jermaine Burton",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 125.0,
+      "rank_stdev": 0.0,
+      "best": 125.0,
+      "worst": 125.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 125.0
+      },
+      "mean_points": 2.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 126,
+      "tier": 32,
+      "name": "Greg Dortch",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 126.0,
+      "rank_stdev": 0.0,
+      "best": 126.0,
+      "worst": 126.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 126.0
+      },
+      "mean_points": 2.38,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 127,
+      "tier": 32,
+      "name": "Jalin Hyatt",
+      "team": "NYG",
+      "opponent": null,
+      "consensus_rank": 127.0,
+      "rank_stdev": 0.0,
+      "best": 127.0,
+      "worst": 127.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 127.0
+      },
+      "mean_points": 2.33,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 128,
+      "tier": 32,
+      "name": "KhaDarel Hodge",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 128.0,
+      "rank_stdev": 0.0,
+      "best": 128.0,
+      "worst": 128.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 128.0
+      },
+      "mean_points": 2.3,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 129,
+      "tier": 33,
+      "name": "Jahan Dotson",
+      "team": "PHI",
+      "opponent": null,
+      "consensus_rank": 129.0,
+      "rank_stdev": 0.0,
+      "best": 129.0,
+      "worst": 129.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 129.0
+      },
+      "mean_points": 2.28,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 130,
+      "tier": 33,
+      "name": "Odell Beckham",
+      "team": "MIA",
+      "opponent": null,
+      "consensus_rank": 130.0,
+      "rank_stdev": 0.0,
+      "best": 130.0,
+      "worst": 130.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 130.0
+      },
+      "mean_points": 2.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 131,
+      "tier": 33,
+      "name": "Tim Jones",
+      "team": "JAC",
+      "opponent": null,
+      "consensus_rank": 131.0,
+      "rank_stdev": 0.0,
+      "best": 131.0,
+      "worst": 131.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 131.0
+      },
+      "mean_points": 2.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 132,
+      "tier": 33,
+      "name": "Ja'Lynn Polk",
+      "team": "NE",
+      "opponent": null,
+      "consensus_rank": 132.0,
+      "rank_stdev": 0.0,
+      "best": 132.0,
+      "worst": 132.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 132.0
+      },
+      "mean_points": 1.9,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 133,
+      "tier": 34,
+      "name": "Bo Melton",
+      "team": "GB",
+      "opponent": null,
+      "consensus_rank": 133.0,
+      "rank_stdev": 0.0,
+      "best": 133.0,
+      "worst": 133.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 133.0
+      },
+      "mean_points": 1.85,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 134,
+      "tier": 34,
+      "name": "Jalen Brooks",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 134.0,
+      "rank_stdev": 0.0,
+      "best": 134.0,
+      "worst": 134.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 134.0
+      },
+      "mean_points": 1.62,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 135,
+      "tier": 34,
+      "name": "Brandon Powell",
+      "team": "MIN",
+      "opponent": null,
+      "consensus_rank": 135.0,
+      "rank_stdev": 0.0,
+      "best": 135.0,
+      "worst": 135.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 135.0
+      },
+      "mean_points": 1.6,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 136,
+      "tier": 34,
+      "name": "Dyami Brown",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 136.0,
+      "rank_stdev": 0.0,
+      "best": 136.0,
+      "worst": 136.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 136.0
+      },
+      "mean_points": 1.5,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 137,
+      "tier": 35,
+      "name": "Ryan Flournoy",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 137.0,
+      "rank_stdev": 0.0,
+      "best": 137.0,
+      "worst": 137.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 137.0
+      },
+      "mean_points": 1.47,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 138,
+      "tier": 35,
+      "name": "Jalen Reagor",
+      "team": "LAC",
+      "opponent": null,
+      "consensus_rank": 138.0,
+      "rank_stdev": 0.0,
+      "best": 138.0,
+      "worst": 138.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 138.0
+      },
+      "mean_points": 1.46,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 139,
+      "tier": 35,
+      "name": "Dante Pettis",
+      "team": "NO",
+      "opponent": null,
+      "consensus_rank": 139.0,
+      "rank_stdev": 0.0,
+      "best": 139.0,
+      "worst": 139.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 139.0
+      },
+      "mean_points": 1.35,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 140,
+      "tier": 35,
+      "name": "Malachi Corley",
+      "team": "NYJ",
+      "opponent": null,
+      "consensus_rank": 140.0,
+      "rank_stdev": 0.0,
+      "best": 140.0,
+      "worst": 140.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 140.0
+      },
+      "mean_points": 1.33,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 141,
+      "tier": 36,
+      "name": "Luke McCaffrey",
+      "team": "WAS",
+      "opponent": null,
+      "consensus_rank": 141.0,
+      "rank_stdev": 0.0,
+      "best": 141.0,
+      "worst": 141.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 141.0
+      },
+      "mean_points": 1.27,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 142,
+      "tier": 36,
+      "name": "Jake Bobo",
+      "team": "SEA",
+      "opponent": null,
+      "consensus_rank": 142.0,
+      "rank_stdev": 0.0,
+      "best": 142.0,
+      "worst": 142.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 142.0
+      },
+      "mean_points": 1.2,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 143,
+      "tier": 36,
+      "name": "Ainias Smith",
+      "team": "PHI",
+      "opponent": null,
+      "consensus_rank": 143.0,
+      "rank_stdev": 0.0,
+      "best": 143.0,
+      "worst": 143.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 143.0
+      },
+      "mean_points": 1.15,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 144,
+      "tier": 36,
+      "name": "Xavier Hutchinson",
+      "team": "HOU",
+      "opponent": null,
+      "consensus_rank": 144.0,
+      "rank_stdev": 0.0,
+      "best": 144.0,
+      "worst": 144.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 144.0
+      },
+      "mean_points": 1.12,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 145,
+      "tier": 37,
+      "name": "DeAndre Carter",
+      "team": "CHI",
+      "opponent": null,
+      "consensus_rank": 145.0,
+      "rank_stdev": 0.0,
+      "best": 145.0,
+      "worst": 145.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 145.0
+      },
+      "mean_points": 1.1,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 146,
+      "tier": 37,
+      "name": "Isaiah Hodgins",
+      "team": "NYG",
+      "opponent": null,
+      "consensus_rank": 146.0,
+      "rank_stdev": 0.0,
+      "best": 146.0,
+      "worst": 146.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 146.0
+      },
+      "mean_points": 1.1,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 147,
+      "tier": 37,
+      "name": "Casey Washington",
+      "team": "ATL",
+      "opponent": null,
+      "consensus_rank": 147.0,
+      "rank_stdev": 0.0,
+      "best": 147.0,
+      "worst": 147.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 147.0
+      },
+      "mean_points": 0.95,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 148,
+      "tier": 37,
+      "name": "Ashton Dulin",
+      "team": "IND",
+      "opponent": null,
+      "consensus_rank": 148.0,
+      "rank_stdev": 0.0,
+      "best": 148.0,
+      "worst": 148.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 148.0
+      },
+      "mean_points": 0.9,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 149,
+      "tier": 38,
+      "name": "Ronnie Bell",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 149.0,
+      "rank_stdev": 0.0,
+      "best": 149.0,
+      "worst": 149.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 149.0
+      },
+      "mean_points": 0.75,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 150,
+      "tier": 38,
+      "name": "Ramel Keyton",
+      "team": "LV",
+      "opponent": null,
+      "consensus_rank": 150.0,
+      "rank_stdev": 0.0,
+      "best": 150.0,
+      "worst": 150.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 150.0
+      },
+      "mean_points": 0.6,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 151,
+      "tier": 38,
+      "name": "Allen Robinson",
+      "team": "DET",
+      "opponent": null,
+      "consensus_rank": 151.0,
+      "rank_stdev": 0.0,
+      "best": 151.0,
+      "worst": 151.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 151.0
+      },
+      "mean_points": 0.47,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 152,
+      "tier": 38,
+      "name": "Trenton Irwin",
+      "team": "CIN",
+      "opponent": null,
+      "consensus_rank": 152.0,
+      "rank_stdev": 0.0,
+      "best": 152.0,
+      "worst": 152.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 152.0
+      },
+      "mean_points": 0.45,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 153,
+      "tier": 39,
+      "name": "Jha'Quan Jackson",
+      "team": "TEN",
+      "opponent": null,
+      "consensus_rank": 153.0,
+      "rank_stdev": 0.0,
+      "best": 153.0,
+      "worst": 153.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 153.0
+      },
+      "mean_points": 0.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 154,
+      "tier": 39,
+      "name": "Zay Jones",
+      "team": "ARI",
+      "opponent": null,
+      "consensus_rank": 154.0,
+      "rank_stdev": 0.0,
+      "best": 154.0,
+      "worst": 154.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 154.0
+      },
+      "mean_points": 0.4,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 155,
+      "tier": 39,
+      "name": "Jonathan Mingo",
+      "team": "DAL",
+      "opponent": null,
+      "consensus_rank": 155.0,
+      "rank_stdev": 0.0,
+      "best": 155.0,
+      "worst": 155.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 155.0
+      },
+      "mean_points": 0.15,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    },
+    {
+      "position": "WR",
+      "rank": 156,
+      "tier": 39,
+      "name": "Chris Conley",
+      "team": "SF",
+      "opponent": null,
+      "consensus_rank": 156.0,
+      "rank_stdev": 0.0,
+      "best": 156.0,
+      "worst": 156.0,
+      "agreement": "single source",
+      "sources": 1,
+      "source_ranks": {
+        "recent_form": 156.0
+      },
+      "mean_points": 0.0,
+      "outliers": [],
+      "notes": [
+        "only 1 source(s) rank this player"
+      ]
+    }
+  ]
+}

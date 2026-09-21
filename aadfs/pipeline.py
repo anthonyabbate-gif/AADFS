@@ -10,6 +10,7 @@ import datetime as dt
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from aadfs.config import cache_dir as cache_directory
 from aadfs.consensus import ConsensusReport, build_consensus
 from aadfs.ingest.fanduel import parse_salary_csv
 from aadfs.models import Slate
@@ -84,14 +85,14 @@ def default_sources(cache: HttpCache | None = None) -> list:
 
 def load_variance(
     seasons: list[int] | None = None,
-    cache_dir: str | Path = "data/cache",
+    cache_dir: str | Path | None = None,
 ) -> tuple[dict[str, float], dict[str, float], list[int], str | None]:
     """Load historical variance, falling back to priors if the data is missing."""
     seasons = seasons or []
     if not seasons:
         return {}, dict(DEFAULT_POSITION_SD), [], None
     try:
-        history = load_history(seasons, cache_dir=cache_dir)
+        history = load_history(seasons, cache_dir=cache_dir or cache_directory())
         return (
             player_variance(history),
             calibrate_position_variance(history),
@@ -111,7 +112,7 @@ def build_projections(
     projection_files: list[str | Path] | None = None,
     weights: dict[str, float] | None = None,
     history_seasons: list[int] | None = None,
-    cache_dir: str | Path = "data/cache",
+    cache_dir: str | Path | None = None,
     fetch_remote: bool = True,
 ) -> ProjectionBundle:
     """Read a salary file, gather projections, and blend them onto the slate."""
@@ -124,14 +125,16 @@ def build_projections(
 
     results: list[SourceResult] = []
     if fetch_remote:
-        for source in sources if sources is not None else default_sources(HttpCache(cache_dir)):
+        for source in sources if sources is not None else default_sources(
+            HttpCache(cache_dir or cache_directory())
+        ):
             results.append(source.fetch(season, week))
 
     for path in projection_files or []:
         results.append(parse_projection_csv(path, source_name=Path(path).stem))
 
     player_sd, position_sd, seasons_used, history_error = load_variance(
-        history_seasons, cache_dir
+        history_seasons, cache_dir or cache_directory()
     )
     report = build_consensus(
         slate, results, weights=weights,

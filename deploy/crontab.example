@@ -1,0 +1,11 @@
+# Weekly consensus capture. Saturday 09:00 local.
+#
+# Timing matters: most fantasy sites have the week's projections up by Saturday
+# morning, and the board must be captured *before* the games so that each
+# source can be graded on what it actually claimed. A week not captured is a
+# week of accuracy data that cannot be recovered later.
+
+0 9 * * 6  cd /srv/aadfs/deploy && docker compose run --rm app aadfs rankings >> /var/log/aadfs-rankings.log 2>&1
+
+# Tuesday 06:00: results are published, so grade last week and update weights.
+0 6 * * 2  cd /srv/aadfs/deploy && docker compose run --rm app aadfs sources score --save >> /var/log/aadfs-score.log 2>&1

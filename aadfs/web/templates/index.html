@@ -17,14 +17,42 @@
 </header>
 
 <nav class="tabs">
-  <button class="tab active" data-tab="setup">1 · Load slate</button>
-  <button class="tab" data-tab="build">2 · Build lineups</button>
-  <button class="tab" data-tab="players">3 · Player pool</button>
-  <button class="tab" data-tab="results">4 · Track results</button>
+  <button class="tab active" data-tab="rankings">Consensus rankings</button>
+  <button class="tab" data-tab="setup">Load slate</button>
+  <button class="tab" data-tab="build">Build lineups</button>
+  <button class="tab" data-tab="players">Player pool</button>
+  <button class="tab" data-tab="results">Track results</button>
 </nav>
 
+<!-- ───────────────────────── Rankings ───────────────────────── -->
+<section class="panel active" id="tab-rankings">
+  <div class="card">
+    <div class="toolbar">
+      <div class="field small" style="margin:0">
+        <label for="rk_season">Season</label>
+        <input type="number" id="rk_season" value="{{ season }}">
+      </div>
+      <div class="field small" style="margin:0">
+        <label for="rk_week">Week</label>
+        <input type="number" id="rk_week" value="{{ week }}" min="1" max="18">
+      </div>
+      <label class="check inline">
+        <input type="checkbox" id="rk_refresh"> Bypass cache
+      </label>
+      <label class="check inline">
+        <input type="checkbox" id="rk_equal"> Weight sources equally
+      </label>
+      <span class="spacer"></span>
+      <button id="rk-build" class="primary">Build consensus</button>
+    </div>
+    <div id="rk-sources" class="srcgrid"></div>
+    <div id="rk-out"></div>
+  </div>
+  <div id="rk-board"></div>
+</section>
+
 <!-- ───────────────────────── Setup ───────────────────────── -->
-<section class="panel active" id="tab-setup">
+<section class="panel" id="tab-setup">
   <div class="card">
     <h2>Load the week's slate</h2>
     <p class="hint">

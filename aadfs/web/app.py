@@ -29,6 +29,8 @@ from aadfs.optimizer import OptimizerConfig
 from aadfs.pipeline import (
     build_lineups, default_sources, guess_season_and_week, load_variance,
 )
+from aadfs.rankings.pipeline import build_board, load_weights, write_board
+from aadfs.rankings.registry import all_sources
 from aadfs.simulate import ContestSettings
 from aadfs.web import auth
 from aadfs.sources.base import HttpCache, SourceResult
@@ -137,6 +139,79 @@ async def index(request: Request):
 @app.get("/favicon.ico", include_in_schema=False)
 async def favicon():
     return FileResponse(BASE_DIR / "static" / "favicon.svg", media_type="image/svg+xml")
+
+
+# --- consensus rankings ------------------------------------------------------
+
+@app.get("/api/rankings/sources")
+async def ranking_sources():
+    """Which inputs exist and whether each can run right now."""
+    return {
+        "sources": [
+            {
+                "name": source.name,
+                "kind": source.kind,
+                "description": source.description,
+                "weight": source.weight,
+                "available": source.available()[0],
+                "reason": source.available()[1],
+                "key_env": source.key_env,
+                "url": source.url,
+            }
+            for source in all_sources()
+        ],
+        "learned_weights": load_weights(),
+    }
+
+
+@app.post("/api/rankings/build")
+async def rankings_build(payload: dict):
+    """Fetch every usable source and aggregate this week's board."""
+    season, week = guess_season_and_week()
+    season = int(payload.get("season") or season)
+    week = int(payload.get("week") or week)
+
+    board = build_board(
+        season, week,
+        weights={} if payload.get("equal_weights") else None,
+        refresh=bool(payload.get("refresh")),
+        only=payload.get("only") or None,
+        min_sources=int(payload.get("min_sources", 1)),
+    )
+    if not board.ok_sources:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "No source returned usable data. Check the Sources panel: the free "
+                "feeds may be unreachable from this machine, or need an API key."
+            ),
+        )
+    paths = write_board(board)
+
+    return {
+        "season": board.season,
+        "week": board.week,
+        "generated_at": board.generated_at,
+        "written": paths,
+        "positions": board.positions,
+        "sources": [
+            {"source": s.source, "kind": s.kind, "ok": s.ok, "entries": s.count,
+             "weight": s.weight, "error": s.error, "from_cache": s.from_cache}
+            for s in board.sources
+        ],
+        "players": [
+            {
+                "position": p.position, "rank": p.overall_rank, "tier": p.tier,
+                "name": p.name, "team": p.team, "opponent": p.opponent,
+                "consensus_rank": p.consensus_rank, "rank_stdev": p.rank_stdev,
+                "best": p.best_rank, "worst": p.worst_rank, "range": p.rank_range,
+                "agreement": p.disagreement, "sources": p.source_count,
+                "source_ranks": p.source_ranks, "mean_points": p.mean_points,
+                "outliers": p.outliers, "notes": p.notes,
+            }
+            for p in board.players
+        ],
+    }
 
 
 @app.get("/api/status")

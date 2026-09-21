@@ -1,0 +1,46 @@
+# Weekly consensus rankings on a small always-on host.
+#
+#   1. put AADFS_PASSWORD and your API keys in a .env file beside this one
+#   2. set your domain in Caddyfile (or drop the caddy service and use Tailscale)
+#   3. docker compose up -d
+#   4. add the weekly scan to the host's crontab (see README)
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: aadfs:latest
+    restart: unless-stopped
+    environment:
+      # Required: the app refuses to bind publicly without it.
+      AADFS_PASSWORD: ${AADFS_PASSWORD:?set AADFS_PASSWORD in .env}
+      AADFS_USERNAME: ${AADFS_USERNAME:-aadfs}
+      AADFS_DATA: /data
+      # Optional source keys; sources without one are skipped, not failed.
+      FANTASYNERDS_API_KEY: ${FANTASYNERDS_API_KEY:-}
+      ODDS_API_KEY: ${ODDS_API_KEY:-}
+    volumes:
+      # Saved boards are the record of what each source said at the time.
+      # Without this volume, a redeploy destroys the accuracy history.
+      - aadfs-data:/data
+    expose:
+      - "8000"
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - app
+
+volumes:
+  aadfs-data:
+  caddy-data:
+  caddy-config:
