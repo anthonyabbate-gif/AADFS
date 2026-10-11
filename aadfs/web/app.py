@@ -21,6 +21,7 @@ from fastapi.templating import Jinja2Templates
 from starlette.requests import Request
 
 from aadfs.consensus import build_consensus
+from aadfs.defense import POSITIONS as DEF_POSITIONS, build_board as build_defense_board, upcoming_matchups
 from aadfs.ingest.fanduel import (
     lineups_to_entry_csv, lineups_to_readable_csv, parse_salary_csv,
 )
@@ -139,6 +140,69 @@ async def index(request: Request):
 @app.get("/favicon.ico", include_in_schema=False)
 async def favicon():
     return FileResponse(BASE_DIR / "static" / "favicon.svg", media_type="image/svg+xml")
+
+
+# --- defence vs position -----------------------------------------------------
+
+_defense_cache: dict = {}
+
+
+@app.get("/api/defense")
+async def defense(season: int = 0, through_week: int = 0, recent: int = 4,
+                  week: int = 0, refresh: bool = False):
+    """Each defence's record against each position, plus the week's fixtures."""
+    from aadfs.sources.nflverse import last_completed_week, load_history, season_schedule
+
+    season = season or guess_season_and_week()[0]
+    key = (season, through_week, recent)
+    if refresh:
+        _defense_cache.clear()
+
+    if key in _defense_cache:
+        board = _defense_cache[key]
+    else:
+        try:
+            history = load_history([season])
+        except Exception as exc:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Could not load {season} results: {exc}",
+            ) from exc
+        through = through_week or None
+        if not through:
+            try:
+                through = last_completed_week(season) or None
+            except Exception:
+                through = None
+        board = build_defense_board(history, season, through_week=through,
+                                    recent_window=recent)
+        if not board.ratings:
+            raise HTTPException(
+                status_code=400,
+                detail=f"No completed {season} games found yet.",
+            )
+        _defense_cache[key] = board
+
+    matchups = []
+    target_week = week or (board.through_week + 1)
+    try:
+        schedule = season_schedule(season)
+        matchups = [m.as_dict() for m in upcoming_matchups(board, schedule, target_week)]
+    except Exception:
+        # The ratings are still useful without fixtures.
+        matchups = []
+
+    return {
+        "season": season,
+        "through_week": board.through_week,
+        "recent_window": board.recent_window,
+        "week": target_week,
+        "positions": list(DEF_POSITIONS),
+        "league_average": board.league_average,
+        "teams": board.teams,
+        "ratings": [r.as_dict() for r in board.ratings],
+        "matchups": matchups,
+    }
 
 
 # --- consensus rankings ------------------------------------------------------

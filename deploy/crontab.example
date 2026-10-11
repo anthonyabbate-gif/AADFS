@@ -7,5 +7,10 @@
 
 0 9 * * 6  cd /srv/aadfs/deploy && docker compose run --rm app aadfs rankings >> /var/log/aadfs-rankings.log 2>&1
 
+# Tuesday 05:00: results are in, so refresh the defence-vs-position board
+# before anything else reads it. (The Saturday scan also refreshes it, so this
+# line only matters if you skip the scan.)
+0 5 * * 2  cd /srv/aadfs/deploy && docker compose run --rm app aadfs defense --json > /dev/null 2>> /var/log/aadfs-defense.log
+
 # Tuesday 06:00: results are published, so grade last week and update weights.
 0 6 * * 2  cd /srv/aadfs/deploy && docker compose run --rm app aadfs sources score --save >> /var/log/aadfs-score.log 2>&1

@@ -151,8 +151,19 @@ def run_scan(
         extra={"lineups": lineup_summary, "relaxations": []},
     )
 
+    # Defensive matchup ratings refresh from the same results data, so the
+    # weekly job leaves one complete picture of the week behind it.
+    defense_summary: dict = {}
+    try:
+        from aadfs.defense import refresh as refresh_defense
+
+        defense_summary = refresh_defense(season=season, output_dir=output_dir)
+    except Exception as exc:
+        defense_summary = {"ok": False, "error": f"{type(exc).__name__}: {exc}"}
+
     failed = [s.source for s in bundle.consensus.failed_sources]
     return {
+        "defense": defense_summary,
         "ok": True,
         "season": season,
         "week": week,

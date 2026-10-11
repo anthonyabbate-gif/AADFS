@@ -40,6 +40,7 @@ $$('.tab').forEach((tab) => tab.addEventListener('click', () => {
   if (tab.dataset.tab === 'players') renderPlayers();
   if (tab.dataset.tab === 'results') loadResults();
   if (tab.dataset.tab === 'rankings') loadRankingSources();
+  if (tab.dataset.tab === 'defense') loadDefense();
 }));
 
 /* ───────────────────────── slate upload ───────────────────────── */
@@ -535,3 +536,187 @@ function renderBoard(data) {
 }
 
 loadRankingSources();
+
+
+/* ───────────────────────── defence vs position ───────────────────────── */
+let defenseData = null;
+
+/* Map a value to one of nine diverging steps. The thresholds are in points per
+   game above or below what an opponent normally scores, so the midpoint band is
+   a genuine "no different from average" rather than a rank cut. */
+function heatClass(value) {
+  if (value === null || value === undefined) return 'h-0';
+  const v = Number(value);
+  if (v <= -6) return 'h-n4';
+  if (v <= -4) return 'h-n3';
+  if (v <= -2) return 'h-n2';
+  if (v <= -0.75) return 'h-n1';
+  if (v < 0.75) return 'h-0';
+  if (v < 2) return 'h-p1';
+  if (v < 4) return 'h-p2';
+  if (v < 6) return 'h-p3';
+  return 'h-p4';
+}
+
+/* The raw view has no natural zero, so it is centred on the league average. */
+function heatClassRaw(allowed, average) {
+  if (!average) return 'h-0';
+  return heatClass(Number(allowed) - Number(average));
+}
+
+const tip = (() => {
+  const el = document.createElement('div');
+  el.className = 'heattip';
+  document.body.appendChild(el);
+  return el;
+})();
+
+function showTip(event, rating, average) {
+  const trendWord = { tightening: 'tightening up', slipping: 'slipping',
+                      steady: 'steady', 'n/a': 'not enough games' }[rating.trend];
+  tip.innerHTML = `<div class="t">${escapeHtml(rating.team)} defence vs ${escapeHtml(rating.position)}</div>
+    <dl>
+      <dt>Allowed / game</dt><dd>${rating.allowed_per_game}</dd>
+      <dt>League average</dt><dd>${average ?? '—'}</dd>
+      <dt>Raw rank</dt><dd>${rating.rank} of ${rating.teams_ranked}</dd>
+      <dt>Vs expected</dt><dd>${rating.above_expected > 0 ? '+' : ''}${rating.above_expected}</dd>
+      <dt>Adjusted rank</dt><dd>${rating.adjusted_rank} of ${rating.teams_ranked}</dd>
+      <dt>Last ${defenseData.recent_window}</dt><dd>${rating.recent_allowed ?? '—'}</dd>
+      <dt>Trend</dt><dd>${escapeHtml(trendWord)}</dd>
+      <dt>Games</dt><dd>${rating.games}</dd>
+    </dl>
+    <div style="margin-top:6px;color:var(--muted)">${escapeHtml(rating.label)}${
+      rating.rank_shift && Math.abs(rating.rank_shift) >= 5
+        ? ` — schedule moves this ${Math.abs(rating.rank_shift)} places`
+        : ''}</div>`;
+  tip.classList.add('on');
+  const pad = 14;
+  const rect = tip.getBoundingClientRect();
+  let x = event.clientX + pad;
+  let y = event.clientY + pad;
+  if (x + rect.width > window.innerWidth - 8) x = event.clientX - rect.width - pad;
+  if (y + rect.height > window.innerHeight - 8) y = event.clientY - rect.height - pad;
+  tip.style.left = `${Math.max(8, x)}px`;
+  tip.style.top = `${Math.max(8, y)}px`;
+}
+function hideTip() { tip.classList.remove('on'); }
+
+$('#dv-load').addEventListener('click', () => loadDefense(true));
+
+async function loadDefense(force) {
+  if (defenseData && !force) return;
+  notice('#dv-out', 'ok', '<span class="spinner"></span>Loading results and building the board…');
+  $('#dv-matrix').innerHTML = '';
+  $('#dv-matchups').innerHTML = '';
+  const params = new URLSearchParams({
+    season: $('#dv_season').value || '0',
+    recent: $('#dv_recent').value || '4',
+    refresh: $('#dv_refresh').checked ? 'true' : 'false',
+  });
+  try {
+    defenseData = await api('/api/defense?' + params.toString());
+    renderDefense();
+  } catch (error) {
+    notice('#dv-out', 'err', escapeHtml(error.message));
+  }
+}
+
+$('#dv_metric').addEventListener('change', () => { if (defenseData) renderDefense(); });
+
+function renderDefense() {
+  const d = defenseData;
+  const adjusted = $('#dv_metric').value === 'adjusted';
+  const thin = d.ratings.some((r) => !r.reliable);
+
+  notice('#dv-out', thin ? 'warn' : 'ok',
+    `${d.season} through week <strong>${d.through_week}</strong>.
+     League average allowed per game —
+     ${d.positions.map((p) => `${p} <strong>${d.league_average[p] ?? '—'}</strong>`).join(', ')}.
+     ${thin ? 'Some defences have played few games, so these ranks are still noisy.' : ''}`);
+
+  const byTeam = {};
+  d.ratings.forEach((r) => { (byTeam[r.team] = byTeam[r.team] || {})[r.position] = r; });
+
+  const legend = `<div class="heatlegend">
+    <span>tougher than average</span>
+    <span class="swatches">
+      ${['n4','n3','n2','n1','0','p1','p2','p3','p4']
+        .map((k) => `<span class="sw" style="background:var(--heat-${k})"></span>`).join('')}
+    </span>
+    <span>more generous</span>
+    <span style="margin-left:auto">each cell shows the ${adjusted ? 'adjusted' : 'raw'}
+      rank; 1 = toughest of ${d.teams.length}</span>
+  </div>`;
+
+  const cellFor = (team, position) => {
+    const r = (byTeam[team] || {})[position];
+    if (!r) return '<td class="h-0">—</td>';
+    const cls = adjusted
+      ? heatClass(r.above_expected)
+      : heatClassRaw(r.allowed_per_game, d.league_average[position]);
+    const rank = adjusted ? r.adjusted_rank : r.rank;
+    const sub = adjusted
+      ? `${r.above_expected > 0 ? '+' : ''}${r.above_expected}`
+      : `${r.allowed_per_game}`;
+    return `<td class="${cls}${r.reliable ? '' : ' thin'}"
+      data-team="${escapeHtml(team)}" data-pos="${escapeHtml(position)}">
+      <span class="rk">${rank}</span><span class="ex">${sub}</span></td>`;
+  };
+
+  const tableFor = (teams) => `<table class="heat">
+      <thead><tr><th></th>${d.positions.map((p) => `<th>vs ${p}</th>`).join('')}</tr></thead>
+      <tbody>${teams.map((team) =>
+        `<tr><th class="team">${escapeHtml(team)}</th>` +
+        d.positions.map((p) => cellFor(team, p)).join('') + '</tr>').join('')}</tbody>
+    </table>`;
+
+  const half = Math.ceil(d.teams.length / 2);
+  $('#dv-matrix').innerHTML = `<div class="heatwrap">
+    ${legend}
+    <div class="heatcols">
+      ${tableFor(d.teams.slice(0, half))}
+      ${tableFor(d.teams.slice(half))}
+    </div>
+  </div>`;
+
+  // Per-cell hover, per the chart interaction rules.
+  $('#dv-matrix').querySelectorAll('td[data-team]').forEach((cell) => {
+    const r = byTeam[cell.dataset.team][cell.dataset.pos];
+    cell.addEventListener('mousemove', (e) => showTip(e, r, d.league_average[r.position]));
+    cell.addEventListener('mouseleave', hideTip);
+  });
+
+  renderMatchups(adjusted);
+}
+
+function renderMatchups(adjusted) {
+  const d = defenseData;
+  if (!d.matchups || !d.matchups.length) { $('#dv-matchups').innerHTML = ''; return; }
+
+  const side = (team, faces) => {
+    const cells = d.positions.map((p) => {
+      const r = faces[p];
+      if (!r) return `<span class="c h-0">${p} —</span>`;
+      const cls = adjusted
+        ? heatClass(r.above_expected)
+        : heatClassRaw(r.allowed_per_game, d.league_average[p]);
+      const rank = adjusted ? r.adjusted_rank : r.rank;
+      return `<span class="c ${cls}" title="${escapeHtml(team)} ${p}s face ${escapeHtml(r.team)}: ${escapeHtml(r.label)}">${p} ${rank}</span>`;
+    }).join('');
+    return `<div class="mside"><span class="tm">${escapeHtml(team)}</span>
+      <span class="cells">${cells}</span></div>`;
+  };
+
+  const games = d.matchups.map((m) => `<div class="matchup">
+    <h4>${escapeHtml(m.away)} @ ${escapeHtml(m.home)}
+      ${m.kickoff ? `<span style="color:var(--muted);font-weight:400"> · ${escapeHtml(m.kickoff)}</span>` : ''}</h4>
+    ${side(m.away, m.faces[m.away] || {})}
+    ${side(m.home, m.faces[m.home] || {})}
+  </div>`).join('');
+
+  $('#dv-matchups').innerHTML = `<div class="heat"><h3 style="margin:18px 0 8px">Week ${d.week} —
+    the defence each offence faces</h3>
+    <p class="hint" style="margin:0 0 12px">Higher number and warmer colour mean a
+      softer matchup for that position group.</p>
+    <div class="mgrid">${games}</div></div>`;
+}

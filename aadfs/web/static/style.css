@@ -252,3 +252,93 @@ tr.tier-break td { border-top: 2px solid var(--accent); }
 .kindtag { font-size: 9px; text-transform: uppercase; letter-spacing: .05em;
            padding: 1px 5px; border-radius: 3px; margin-left: 6px;
            border: 1px solid var(--border); color: var(--muted); }
+
+/* ── defence vs position heatmap ─────────────────────────────────────────────
+   A diverging scale: blue = tougher than the league, red = more generous,
+   neutral grey at the midpoint. Both arms step monotonically away from that
+   midpoint, and every step clears 4.5:1 against the ink that sits on it, so
+   the rank printed in each cell stays readable. Colour never carries the value
+   alone -- the rank is written in the cell. */
+.heat, .heatwrap {
+  --heat-n4: #6e9bd5; --heat-n3: #83b1ed; --heat-n2: #9dc7ff; --heat-n1: #bedaff;
+  --heat-0:  #f0efec;
+  --heat-p1: #ffc8c3; --heat-p2: #ffaba4; --heat-p3: #e7958e; --heat-p4: #cf7f79;
+  --heat-ink: #0b0b0b;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .heat,
+  :root:not([data-theme="light"]) .heatwrap {
+    --heat-n4: #386db0; --heat-n3: #295ea0; --heat-n2: #1a4f90; --heat-n1: #084180;
+    --heat-0:  #383835;
+    --heat-p1: #751f1f; --heat-p2: #852e2c; --heat-p3: #963d3a; --heat-p4: #a64c47;
+    --heat-ink: #f0efec;
+  }
+}
+:root[data-theme="dark"] .heat, .heatwrap {
+  --heat-n4: #386db0; --heat-n3: #295ea0; --heat-n2: #1a4f90; --heat-n1: #084180;
+  --heat-0:  #383835;
+  --heat-p1: #751f1f; --heat-p2: #852e2c; --heat-p3: #963d3a; --heat-p4: #a64c47;
+  --heat-ink: #f0efec;
+}
+
+.heatwrap { background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 16px; margin-bottom: 14px; }
+/* Thirty-two rows in a single column is a lot of scrolling for a table four
+   columns wide, so it splits across the space available. */
+.heatcols { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-start; }
+table.heat { border-collapse: separate; border-spacing: 2px; width: auto; }
+table.heat th { font-size: 11px; color: var(--muted); font-weight: 500;
+                text-transform: uppercase; letter-spacing: .05em; padding: 4px 8px; }
+table.heat th.team { text-align: left; font-size: 12px; color: var(--text);
+                     text-transform: none; letter-spacing: 0; font-variant-numeric: normal; }
+table.heat td {
+  border: none; border-radius: 4px; padding: 7px 10px; min-width: 62px;
+  text-align: center; font-variant-numeric: tabular-nums; cursor: default;
+  color: var(--heat-ink); background: var(--heat-0);
+}
+table.heat td .rk { font-weight: 700; font-size: 13px; }
+table.heat td .ex { display: block; font-size: 10px; opacity: .8; }
+/* These must outrank `table.heat td` above, which sets the neutral default --
+   a bare `td.h-p4` loses to it on specificity and the whole matrix renders grey. */
+table.heat td.h-n4 { background: var(--heat-n4); }
+table.heat td.h-n3 { background: var(--heat-n3); }
+table.heat td.h-n2 { background: var(--heat-n2); }
+table.heat td.h-n1 { background: var(--heat-n1); }
+table.heat td.h-0  { background: var(--heat-0);  }
+table.heat td.h-p1 { background: var(--heat-p1); }
+table.heat td.h-p2 { background: var(--heat-p2); }
+table.heat td.h-p3 { background: var(--heat-p3); }
+table.heat td.h-p4 { background: var(--heat-p4); }
+table.heat td.thin { opacity: .55; }
+
+.heatlegend { display: flex; align-items: center; gap: 10px; margin: 4px 0 14px;
+              font-size: 11px; color: var(--muted); flex-wrap: wrap; }
+.heatlegend .swatches { display: flex; gap: 2px; }
+.heatlegend .sw { width: 26px; height: 14px; border-radius: 3px; }
+
+.heattip {
+  position: fixed; z-index: 50; pointer-events: none; max-width: 270px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 9px 11px; font-size: 12px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 22%); opacity: 0; transition: opacity .1s;
+}
+.heattip.on { opacity: 1; }
+.heattip .t { font-weight: 600; margin-bottom: 5px; }
+.heattip dl { display: grid; grid-template-columns: auto auto; gap: 2px 12px; margin: 0; }
+.heattip dt { color: var(--muted); } .heattip dd { margin: 0; text-align: right;
+              font-variant-numeric: tabular-nums; }
+
+.matchup { background: var(--surface); border: 1px solid var(--border);
+           border-radius: var(--radius); padding: 12px 14px; }
+.matchup h4 { margin: 0 0 8px; font-size: 13px; }
+.mgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 10px; }
+.mside { display: flex; align-items: center; gap: 7px; margin: 5px 0; font-size: 12px; }
+.mside .tm { width: 38px; font-weight: 600; }
+.mside .cells { display: flex; gap: 3px; }
+.mside .c { min-width: 42px; text-align: center; border-radius: 3px; padding: 3px 4px;
+            font-size: 11px; font-variant-numeric: tabular-nums; color: var(--heat-ink);
+            background: var(--heat-0); }
+.mside .c.h-n4 { background: var(--heat-n4); } .mside .c.h-n3 { background: var(--heat-n3); }
+.mside .c.h-n2 { background: var(--heat-n2); } .mside .c.h-n1 { background: var(--heat-n1); }
+.mside .c.h-p1 { background: var(--heat-p1); } .mside .c.h-p2 { background: var(--heat-p2); }
+.mside .c.h-p3 { background: var(--heat-p3); } .mside .c.h-p4 { background: var(--heat-p4); }

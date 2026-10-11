@@ -382,6 +382,157 @@ def cmd_sources_score(args) -> int:
     return 0
 
 
+
+# --- defence vs position ------------------------------------------------------
+
+def _defense_board(args):
+    """Load history and build the board, resolving the week if not given."""
+    from aadfs.defense import build_board
+    from aadfs.pipeline import guess_season_and_week
+    from aadfs.sources.nflverse import last_completed_week, load_history
+
+    season = args.season or guess_season_and_week()[0]
+    history = load_history([season])
+    through = args.through_week
+    if not through:
+        try:
+            through = last_completed_week(season) or None
+        except Exception:
+            through = None
+    return season, build_board(history, season, through_week=through,
+                               recent_window=args.recent)
+
+
+def _rank_cell(rank: int, total: int) -> str:
+    return f"{rank}/{total}"
+
+
+def cmd_defense(args) -> int:
+    season, board = _defense_board(args)
+    if not board.ratings:
+        print(f"No completed games found for {season}.", file=sys.stderr)
+        return 1
+
+    if args.json:
+        print(json.dumps({
+            "season": season, "through_week": board.through_week,
+            "recent_window": board.recent_window,
+            "league_average": board.league_average,
+            "ratings": [r.as_dict() for r in board.ratings],
+        }, indent=2))
+        return 0
+
+    positions = [p.upper() for p in (args.positions or list(board.league_average))]
+    positions = [p for p in ("QB", "RB", "WR", "TE") if p in positions]
+
+    print(f"Defence vs position — {season}, through week {board.through_week}")
+    print("  rank 1 = toughest, "
+          f"{max((r.teams_ranked for r in board.ratings), default=32)} = most generous")
+    print("  league average allowed per game: "
+          + ", ".join(f"{p} {v}" for p, v in sorted(board.league_average.items())))
+    if board.ratings and not board.ratings[0].reliable:
+        print("  NOTE: few games played so far; these ranks are still noisy.")
+    print()
+
+    if args.team:
+        for team in args.team:
+            ratings = board.for_team(team)
+            if not ratings:
+                print(f"  no data for {team}", file=sys.stderr)
+                continue
+            print(f"  {team.upper()} defence")
+            print(f"    {'pos':<4}{'allowed/g':>11}{'rank':>8}{'vs exp':>9}"
+                  f"{'adjusted':>10}{'last ' + str(args.recent):>9}{'trend':>12}  read")
+            for r in ratings:
+                recent = (f"{r.recent_allowed:.1f}" if r.recent_allowed is not None
+                          else "-")
+                print(f"    {r.position:<4}{r.allowed_per_game:>11.1f}"
+                      f"{_rank_cell(r.rank, r.teams_ranked):>8}"
+                      f"{r.above_expected:>+9.1f}"
+                      f"{_rank_cell(r.adjusted_rank, r.teams_ranked):>10}"
+                      f"{recent:>9}{r.trend:>12}  {r.label}")
+            print()
+        return 0
+
+    for position in positions:
+        ratings = board.for_position(position)
+        if not ratings:
+            continue
+        shown = ratings if args.all else (ratings[:args.top] + ratings[-args.top:])
+        print(f"  vs {position}  (league average {board.league_average.get(position, 0):.1f}/game)")
+        print(f"    {'adj':>4} {'team':<5}{'allowed/g':>11}{'raw':>7}{'vs exp':>9}"
+              f"{'last ' + str(args.recent):>9}{'trend':>12}  read")
+        previous = None
+        for r in shown:
+            if previous is not None and r.adjusted_rank - previous > 1:
+                print("    " + "." * 58)
+            recent = (f"{r.recent_allowed:.1f}" if r.recent_allowed is not None else "-")
+            print(f"    {r.adjusted_rank:>4} {r.team:<5}{r.allowed_per_game:>11.1f}"
+                  f"{r.rank:>7}{r.above_expected:>+9.1f}{recent:>9}{r.trend:>12}  {r.label}")
+            previous = r.adjusted_rank
+        print()
+
+    if args.shifts:
+        moved = sorted(board.ratings, key=lambda r: -abs(r.rank_shift))[:10]
+        print("  Biggest schedule effects (raw rank vs adjusted):")
+        for r in moved:
+            direction = "an easier" if r.rank_shift < 0 else "a harder"
+            print(f"    {r.team:<5} vs {r.position:<3} raw {r.rank:>2} -> adjusted "
+                  f"{r.adjusted_rank:>2}   (had {direction} schedule than the raw "
+                  f"number suggests)")
+        print()
+    return 0
+
+
+def cmd_matchups(args) -> int:
+    from aadfs.defense import POSITIONS, upcoming_matchups
+    from aadfs.sources.nflverse import season_schedule
+
+    season, board = _defense_board(args)
+    if not board.ratings:
+        print(f"No completed games found for {season}.", file=sys.stderr)
+        return 1
+
+    week = args.week or (board.through_week + 1)
+    try:
+        schedule = season_schedule(season)
+    except Exception as exc:
+        print(f"Could not load the schedule: {exc}", file=sys.stderr)
+        return 1
+
+    matchups = upcoming_matchups(board, schedule, week)
+    if not matchups:
+        print(f"No games scheduled for {season} week {week}.", file=sys.stderr)
+        return 1
+
+    if args.json:
+        print(json.dumps({"season": season, "week": week,
+                          "matchups": [m.as_dict() for m in matchups]}, indent=2))
+        return 0
+
+    print(f"Week {week} matchups — each offence and the defence it faces")
+    print(f"  ratings from {season} through week {board.through_week}; "
+          "higher adjusted rank = softer matchup\n")
+    for matchup in matchups:
+        print(f"  {matchup.away} @ {matchup.home}"
+              + (f"   {matchup.kickoff}" if matchup.kickoff else ""))
+        for offense in (matchup.away, matchup.home):
+            ratings = matchup.faces.get(offense, {})
+            if not ratings:
+                continue
+            cells = []
+            for position in POSITIONS:
+                rating = ratings.get(position)
+                if rating is None:
+                    continue
+                cells.append(
+                    f"{position} {rating.adjusted_rank:>2}/{rating.teams_ranked}"
+                )
+            print(f"    {offense:<4} offence faces:  " + "   ".join(cells))
+        print()
+    return 0
+
+
 def cmd_serve(args) -> int:
     import uvicorn
 
@@ -495,6 +646,33 @@ def build_parser() -> argparse.ArgumentParser:
     score.add_argument("--save", action="store_true",
                        help="Write the derived weights for future blends")
     score.set_defaults(func=cmd_sources_score)
+
+
+    defense = subparsers.add_parser(
+        "defense", help="Defensive rankings against each fantasy position")
+    defense.add_argument("--season", type=int)
+    defense.add_argument("--through-week", type=int, dest="through_week",
+                         help="Only count games up to this week")
+    defense.add_argument("--recent", type=int, default=4,
+                         help="Games in the recent-form window")
+    defense.add_argument("--team", nargs="*", help="Show only these defences")
+    defense.add_argument("--positions", nargs="*", help="Limit to these positions")
+    defense.add_argument("--top", type=int, default=6,
+                         help="Toughest/softest shown per position")
+    defense.add_argument("--all", action="store_true", help="Show all 32")
+    defense.add_argument("--shifts", action="store_true",
+                         help="Also list the biggest schedule effects")
+    defense.add_argument("--json", action="store_true")
+    defense.set_defaults(func=cmd_defense)
+
+    matchups = subparsers.add_parser(
+        "matchups", help="This week's games, with the defence each offence faces")
+    matchups.add_argument("--season", type=int)
+    matchups.add_argument("--week", type=int, help="Defaults to the next unplayed week")
+    matchups.add_argument("--through-week", type=int, dest="through_week")
+    matchups.add_argument("--recent", type=int, default=4)
+    matchups.add_argument("--json", action="store_true")
+    matchups.set_defaults(func=cmd_matchups)
 
     serve = subparsers.add_parser("serve", help="Start the web app")
     serve.add_argument("--host", default="127.0.0.1",

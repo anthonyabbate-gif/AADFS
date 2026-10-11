@@ -12,5 +12,7 @@ data/projections/*
 !data/projections/.gitkeep
 data/results/*
 !data/results/.gitkeep
+data/rankings/*
+!data/rankings/.gitkeep
 aadfs.db
 .env

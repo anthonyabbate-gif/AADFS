@@ -17,15 +17,51 @@
 </header>
 
 <nav class="tabs">
-  <button class="tab active" data-tab="rankings">Consensus rankings</button>
+  <button class="tab active" data-tab="defense">Defence vs position</button>
+  <button class="tab" data-tab="rankings">Consensus rankings</button>
   <button class="tab" data-tab="setup">Load slate</button>
   <button class="tab" data-tab="build">Build lineups</button>
   <button class="tab" data-tab="players">Player pool</button>
   <button class="tab" data-tab="results">Track results</button>
 </nav>
 
+<!-- ───────────────────────── Defence vs position ───────────────────────── -->
+<section class="panel active" id="tab-defense">
+  <div class="card">
+    <div class="toolbar">
+      <div class="field small" style="margin:0">
+        <label for="dv_season">Season</label>
+        <input type="number" id="dv_season" value="{{ season }}">
+      </div>
+      <div class="field small" style="margin:0">
+        <label for="dv_recent">Recent window</label>
+        <input type="number" id="dv_recent" value="4" min="1" max="10">
+      </div>
+      <div class="field small" style="margin:0">
+        <label for="dv_metric">Colour by</label>
+        <select id="dv_metric">
+          <option value="adjusted" selected>Adjusted for schedule</option>
+          <option value="raw">Raw points allowed</option>
+        </select>
+      </div>
+      <label class="check inline"><input type="checkbox" id="dv_refresh"> Refresh data</label>
+      <span class="spacer"></span>
+      <button id="dv-load" class="primary">Load</button>
+    </div>
+    <p class="hint" style="margin:10px 0 0">
+      Rank <strong>1 is the toughest</strong> defence, 32 the most generous. The raw
+      number is points allowed per game; the adjusted one measures each opponent
+      against what that offence normally produces, so a defence is not rewarded
+      for an easy schedule. Where the two disagree, the gap is the schedule.
+    </p>
+    <div id="dv-out"></div>
+  </div>
+  <div id="dv-matrix"></div>
+  <div id="dv-matchups"></div>
+</section>
+
 <!-- ───────────────────────── Rankings ───────────────────────── -->
-<section class="panel active" id="tab-rankings">
+<section class="panel" id="tab-rankings">
   <div class="card">
     <div class="toolbar">
       <div class="field small" style="margin:0">

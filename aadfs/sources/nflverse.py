@@ -14,6 +14,7 @@ tried for each season.
 
 from __future__ import annotations
 
+import time
 from pathlib import Path
 
 import numpy as np
@@ -30,24 +31,55 @@ _CANDIDATES = (
     f"{_RELEASE}/player_stats/stats_player_week_{{season}}.csv",
 )
 
-# nflverse column -> StatLine-equivalent weight under FanDuel scoring.
-_POINT_WEIGHTS = {
-    "passing_yards": 0.04,
-    "passing_tds": 4.0,
-    "interceptions": -1.0,
-    "rushing_yards": 0.1,
-    "rushing_tds": 6.0,
-    "receptions": 0.5,
-    "receiving_yards": 0.1,
-    "receiving_tds": 6.0,
-    "special_teams_tds": 6.0,
-    "passing_2pt_conversions": 2.0,
-    "rushing_2pt_conversions": 2.0,
-    "receiving_2pt_conversions": 2.0,
-    "sack_fumbles_lost": -2.0,
-    "rushing_fumbles_lost": -2.0,
-    "receiving_fumbles_lost": -2.0,
+# nflverse column -> weight under FanDuel scoring.
+#
+# nflverse has published two schemas: the older `player_stats_<season>` files
+# and the newer `stats_player_week_<season>` ones, which renamed some columns
+# and added every defensive player. Each entry therefore lists the column names
+# that mean the same thing, and the first one present is used.
+#
+# Getting this wrong is silent and expensive: when `interceptions` was renamed
+# to `passing_interceptions`, quarterback scores simply stopped being docked for
+# throwing picks, and nothing anywhere raised. `missing_scoring_columns` exists
+# so that can be checked rather than assumed.
+_POINT_WEIGHTS: dict[tuple[str, ...], float] = {
+    ("passing_yards",): 0.04,
+    ("passing_tds",): 4.0,
+    ("interceptions", "passing_interceptions"): -1.0,
+    ("rushing_yards",): 0.1,
+    ("rushing_tds",): 6.0,
+    ("receptions",): 0.5,
+    ("receiving_yards",): 0.1,
+    ("receiving_tds",): 6.0,
+    ("special_teams_tds",): 6.0,
+    ("passing_2pt_conversions",): 2.0,
+    ("rushing_2pt_conversions",): 2.0,
+    ("receiving_2pt_conversions",): 2.0,
+    ("sack_fumbles_lost",): -2.0,
+    ("rushing_fumbles_lost",): -2.0,
+    ("receiving_fumbles_lost",): -2.0,
 }
+
+
+def resolve_scoring_columns(columns) -> dict[str, float]:
+    """Pick the column actually present for each scored statistic."""
+    available = set(columns)
+    resolved: dict[str, float] = {}
+    for names, weight in _POINT_WEIGHTS.items():
+        for name in names:
+            if name in available:
+                resolved[name] = weight
+                break
+    return resolved
+
+
+def missing_scoring_columns(columns) -> list[str]:
+    """Scored statistics this frame cannot supply, named by their first alias."""
+    available = set(columns)
+    return [
+        names[0] for names in _POINT_WEIGHTS
+        if not any(name in available for name in names)
+    ]
 
 #: Fallback week-to-week standard deviation by position, used when a player has
 #: too little history of their own. Derived from typical NFL scoring spread;
@@ -89,13 +121,23 @@ def download_season(season: int, cache_dir: Path | str = DEFAULT_CACHE_DIR,
     )
 
 
-def add_fanduel_points(frame: pd.DataFrame) -> pd.DataFrame:
-    """Add a `fd_points` column scored under FanDuel's rules."""
+def add_fanduel_points(frame: pd.DataFrame, strict: bool = False) -> pd.DataFrame:
+    """Add a `fd_points` column scored under FanDuel's rules.
+
+    With `strict`, a schema that cannot supply every scored statistic raises
+    instead of quietly scoring without it.
+    """
     frame = frame.copy()
+    missing = missing_scoring_columns(frame.columns)
+    if missing and strict:
+        raise ValueError(
+            "These scored statistics are absent from the data, so points would be "
+            f"wrong: {', '.join(missing)}. The nflverse schema may have changed again."
+        )
+
     total = pd.Series(0.0, index=frame.index)
-    for column, weight in _POINT_WEIGHTS.items():
-        if column in frame.columns:
-            total = total + pd.to_numeric(frame[column], errors="coerce").fillna(0.0) * weight
+    for column, weight in resolve_scoring_columns(frame.columns).items():
+        total = total + pd.to_numeric(frame[column], errors="coerce").fillna(0.0) * weight
     frame["fd_points"] = total.round(2)
     return frame
 
@@ -306,3 +348,70 @@ def weekly_dst_actuals(
         for row in frame[mask].itertuples()
         if isinstance(row.team_code, str)
     }
+
+
+# --- schedules ----------------------------------------------------------------
+
+_SCHEDULE_URLS = (
+    "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
+    f"{_RELEASE}/schedules/schedules.csv",
+)
+
+
+def download_schedule(cache_dir: Path | str | None = None,
+                      refresh: bool = False) -> pd.DataFrame:
+    """Every scheduled game, past and future.
+
+    Needed to say who a defence faces next; the weekly stats only describe games
+    already played.
+    """
+    from aadfs.config import cache_dir as default_cache_dir
+
+    cache_dir = Path(cache_dir or default_cache_dir())
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    local = cache_dir / "nflverse_schedule.csv"
+
+    # The schedule changes as games are played, so the cache is short-lived.
+    fresh_enough = (
+        local.exists() and not refresh and local.stat().st_size > 1024
+        and (time.time() - local.stat().st_mtime) < 12 * 3600
+    )
+    if fresh_enough:
+        return pd.read_csv(local, low_memory=False)
+
+    import httpx
+
+    errors = []
+    for url in _SCHEDULE_URLS:
+        try:
+            with httpx.Client(timeout=120.0, follow_redirects=True) as client:
+                response = client.get(url, headers={"User-Agent": USER_AGENT})
+            if response.status_code != 200 or len(response.content) < 1024:
+                errors.append(f"{url} -> HTTP {response.status_code}")
+                continue
+            local.write_bytes(response.content)
+            return pd.read_csv(local, low_memory=False)
+        except Exception as exc:
+            errors.append(f"{url} -> {type(exc).__name__}: {exc}")
+
+    if local.exists():
+        # A stale schedule beats no schedule.
+        return pd.read_csv(local, low_memory=False)
+    raise RuntimeError("Could not download the schedule. Tried:\n  " + "\n  ".join(errors))
+
+
+def season_schedule(season: int, cache_dir: Path | str | None = None,
+                    refresh: bool = False) -> pd.DataFrame:
+    """One season's regular-season games, with normalised team codes."""
+    frame = download_schedule(cache_dir, refresh)
+    frame = frame[(frame["season"] == season) & (frame["game_type"] == "REG")].copy()
+    frame["away"] = frame["away_team"].map(normalize_team)
+    frame["home"] = frame["home_team"].map(normalize_team)
+    return frame
+
+
+def last_completed_week(season: int, cache_dir: Path | str | None = None) -> int:
+    """The most recent week with a final score."""
+    frame = season_schedule(season, cache_dir)
+    played = frame[frame["result"].notna()]
+    return int(played["week"].max()) if len(played) else 0

@@ -35,6 +35,52 @@ the fastest way to find out what you are actually working with.
 
 ---
 
+## Defence vs position
+
+How each defence has fared against quarterbacks, running backs, receivers and
+tight ends — "the Bills are 30th against QBs but 12th against tight ends".
+
+```bash
+aadfs defense --team BUF              # one defence, all four positions
+aadfs defense --positions TE --shifts # the TE board, plus schedule effects
+aadfs matchups                        # this week's games and who each offence faces
+```
+
+**Rank 1 is the toughest defence, 32 the most generous**, for both measures
+below. That direction is the single easiest thing to invert, so the app prints
+it on every view and labels each cell in words as well as numbers.
+
+### Why there are two numbers
+
+The familiar version of this stat is fantasy points allowed per game. It is
+useful and it is also the most commonly misread number in fantasy, because it
+describes a defence's *schedule* as much as the defence. A unit that has faced
+three elite quarterbacks looks porous; one that has faced three poor ones looks
+impassable. Neither tells you much about the fourth.
+
+So each defence gets both:
+
+- **allowed per game** — the raw figure everyone quotes.
+- **above expected** — the same games, but every opponent measured against what
+  *that* offence normally produces, with the game being judged left out of its
+  own baseline. A defence is credited for holding a good offence below its
+  standard, not for having played a bad one.
+
+They sit side by side deliberately. In 2026 through week 5, Carolina were 29th
+against running backs on the raw number and **8th** once adjusted — a 21-place
+swing that is entirely schedule. `--shifts` lists the largest of these.
+
+Also reported: a recent-form window (four games by default) and a trend, so a
+defence that has tightened up since losing a cornerback does not stay buried
+under its September results. Where a defence has played too few games for the
+rank to mean anything, it is dimmed and labelled rather than shown as fact.
+
+The browser view renders all of it as a 32 × 4 matrix, and joins it to the
+week's fixtures so the question is the one you actually have: *my tight end
+plays Denver — is that good?*
+
+---
+
 ## Consensus rankings
 
 ### The inputs
@@ -355,6 +401,10 @@ Dockerfile does.
   field goals and extra points; that reconstruction reproduces real final scores
   exactly on every game checked.
 - **This does not place bets.** It builds a CSV you upload yourself.
+- **Defensive ratings are descriptive, not predictive.** They say what has
+  happened, adjusted for who it happened against. Injuries, a new coordinator
+  or a returning corner can invalidate them overnight, and early in a season
+  four games is a very small sample however it is adjusted.
 - **Consensus is not accuracy.** Sources agreeing means they agree, not that
   they are right — they often read each other. Agreement narrows a tier; it does
   not guarantee the tier is in the right place.
@@ -377,6 +427,7 @@ aadfs/
     aggregate.py    rank blending, disagreement, tiers
     evaluate.py     grading sources against real results
     pipeline.py     building and saving the weekly board
+  defense.py        defence vs position: raw, schedule-adjusted, trend
   scoring.py        FanDuel scoring rules and roster construction
   models.py         Player, Slate, Lineup
   names.py          name/team normalisation and matching
